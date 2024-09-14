@@ -1,0 +1,121 @@
+.container {
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 10px;
+  }
+  
+  .nurse-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .task-list, .medication-section, .notes-section {
+    margin-top: 20px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .nurse-info {
+      display: block;
+      text-align: center;
+    }
+  
+    .nurse-info img {
+      margin: 0 auto;
+      width: 80px;
+      height: 80px;
+    }
+  
+    .task-list, .medication-section, .notes-section {
+      padding: 10px;
+    }
+  
+    .task-list .row {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .nurse-info {
+      display: flex;
+    }
+  
+    .nurse-info img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .task-list .row {
+      display: flex;
+    }
+  
+    .task-list .row div {
+      margin: 5px 0;
+    }
+  }
+  
+  /* Desktop Styles */
+  /* @media (min-width: 1025px) {
+    .nurse-info {
+      display: flex;
+    }
+  
+    .nurse-info img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .task-list .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  } */
+
+
+
+
+
+/* Task Card Styling */
+/* .task-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-details img {
+    margin-right: 10px;
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+  }
+  
+  .badge {
+    margin-left: 5px;
+  }
+  
+  .text-end {
+    text-align: right;
+  }
+  
+  .mt-2 {
+    margin-top: 10px;
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  .text-md-right {
+    text-align: right;
+  }
+  
+  @media (max-width: 576px) {
+    .text-end {
+      text-align: center;
+    }
+  }
+   */
+

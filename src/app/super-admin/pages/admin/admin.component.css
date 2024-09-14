@@ -1,0 +1,77 @@
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .pagination-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+  }
+  
+  .pagination-controls span {
+    margin: 0 10px;
+  }
+  
+  .btn{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: none;
+  }
+
+  h2{
+    background-color: #438eb9;
+    color: aliceblue;
+    padding: 1%;
+}
+@media (max-width: 767px) {
+  .headingmy{
+   margin-top: 20px !important;
+  }
+  /* .table-responsive{
+    margin-left: 36px !important;
+  } */
+}
+
+/* .tick-button {
+  background-color: transparent;
+  border: 2px solid blue;
+  border-radius: 50%;
+  color: blue;
+  cursor: pointer;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tick-button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.tick-button i {
+  font-size: 16px;
+} */
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-icon i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.btn-icon:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.2);
+}

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+.toast-success {
+    background-color: #28a745 !important;  /* Set green background */
+    color: white;  /* Set text color to white */
+  }
+  
+  /* You can customize other toast types similarly */
+  .toast-error {
+    background-color: #dc3545 !important;  /* Red background for errors */
+    color: white;
+  }
+  
+  .toast-warning {
+    background-color: #ffc107 !important;  /* Yellow background for warnings */
+    color: black;
+  }
+  
+  .toast-info {
+    background-color: #17a2b8 !important;  /* Blue background for info */
+    color: white;
+  }

@@ -1,0 +1,11 @@
+.fas{
+    background-color: #5090C1;
+    color: #fff;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+}

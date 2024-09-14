@@ -1,0 +1,78 @@
+<section>
+
+  <div class="container">
+
+    <div class="row mt-2 ">
+      <h2 class="headingmy">View all admins</h2>
+      <hr>
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
+        <!-- <button type="button" [routerLink]="['/superAdmin/admins']" routerLinkActive="router-link-active"
+          class="btn btn-primary">Add Admin</button>-->
+
+       <button type="button" [routerLink]="['/superAdmin/admins']" routerLinkActive="router-link-active"
+        class="btn btn-primary btn-icon">
+    <i class="fas fa-user-plus"></i> Add Admin
+</button> 
+ </div> 
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+        <div class="table-responsive headingmy1">
+          <table class="table table-hover " style="text-wrap: nowrap;">
+            <thead>
+              <tr>
+                <th>Sr No</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Status</th>
+                <th>Licence Verified</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let admin of paginatedDoctors; let i = index">
+                <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                <td>
+                  <div class="mt-2"><img style="width: 50px; border-radius: 30px; text-align: center;"
+                      src="{{admin.image}}" alt="img" /></div>
+                </td>
+                <td>{{ admin.name }}</td>
+                <td>{{ admin.email }}</td>
+                <!-- <td>{{ admin.password }}</td> -->
+                <!-- <td> <img [src]="admin.image" class="img-fluid w-100" alt=""> </td> -->
+                <td>{{ admin.mobileNumber }}</td>
+                <td>
+                  <button class="btn btn-primary bg-transparent">
+                    <div *ngIf="!admin.account" style="color:#005dac;font-weight: bold;">Pending</div>
+                    <div *ngIf="admin.account" style="color:green;font-weight: bold;">Approved</div>
+                  </button>
+                </td>
+                <td>
+                  <div *ngIf="!admin.account">
+                    <button title="Home Care Licence Appoved" class="btn btn-primary bg-transparent"
+                      (click)="verified(admin)">
+                      <!-- <i class="fa fa-check" aria-hidden="true"></i> -->
+                      <i style="color: red;" class="fa-solid fa-check"></i>
+                    </button>
+                  </div>
+                  <div *ngIf="admin.account" style="color: green; font-weight: bold;">Verified Licence</div>
+                </td>
+                <td> <button title="Home Care Licence Appoved" class="btn btn-primary bg-transparent"> <i
+                      (click)="deleteDoctors(admin.id)" style="color: rgba(255, 0, 0, 0.819);"
+                      class="fa-solid fa-trash"></i> </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+          <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

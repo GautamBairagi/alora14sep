@@ -1,0 +1,252 @@
+<section>
+    <!-- <div class="container-fluid">
+        <div class="row mt-3 ">
+            <h2 style="background-color: #438eb9; color: white;">View all patients</h2>
+            <hr>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
+              <button type="button" [routerLink]="['/nurse/nurse_patient']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Patient</button>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+                <div class="table-responsive">
+                    <table class="table table-hover" style="text-wrap: nowrap;">
+                      <thead>
+                        <tr>
+                          <th>Sr No</th>
+                          <th>Image</th>
+                          <th>First Name</th>
+                          <th>Middle Name</th>
+                          <th>Last Name</th>
+                          <th>Date of Birth</th>
+                          <th>Gender</th>
+                           <th>City</th>
+                          <th>Email</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let admin of paginatedDoctors; let i = index">
+                          <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                          <td >
+                            <div class="mt-2"><img style="width: 50px; border-radius: 30px; text-align: center;" src="{{admin.image}}" alt="img"/></div>
+                        </td>
+                          <td>{{ admin.firstname }}</td>
+                          <td>{{ admin.middlename }}</td>
+                          <td>{{ admin.lastname }}</td>
+                          <td>{{ admin.dateofBirth }}</td>
+                          <td>{{ admin.gender }}</td>
+                          <td>{{ admin.city }}</td>
+                          <td>{{ admin.email }}</td>
+                          <td>  
+                            <button class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" ><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="btn btn-danger bg-transparent m-1" style="color: red;" ><i class="fa-solid fa-trash"></i></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination-controls">
+                    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+                    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+                  </div>
+            </div>
+        </div>
+        
+    </div> -->
+
+          
+   <!-- <div class="container">
+
+      <div class="row nurse-info">
+        <div class="col-md-4 text-center">
+          <img [src]="nursePhoto" alt="Nurse Photo" class="img-fluid rounded-circle">
+        </div>
+        <div class="col-md-8">
+          <h2>{{ nurseName }}</h2>
+          <p>Unit: {{ unitNumber }}</p>
+          <p><strong>Care Plan:</strong> <a href="#">{{ carePlan }}</a></p>
+          <p><strong>Allergies:</strong> {{ allergies }}</p>
+          <p><strong>Diet:</strong> {{ diet }}</p>
+          <p><strong>Orders:</strong> {{ ongoingOrders }}</p>
+        </div>
+      </div>
+    
+
+      <div class="task-list mt-4">
+        <div class="row" *ngFor="let task of tasks">
+          <div class="col-md-8">
+            <h4>{{ task.title }} ({{ task.duration }} mins)</h4>
+            <p>{{ task.instructions }}</p>
+          </div>
+          <div class="col-md-4 d-flex align-items-center">
+            <label class="form-check-label">
+              <input type="checkbox" [(ngModel)]="task.isCompleted"> Mark as Completed
+            </label>
+          </div>
+        </div>
+      </div>
+  
+      <button (click)="toggleMeds()" class="btn btn-primary">
+        {{ isMedsCollapsed ? 'Expand' : 'Collapse' }} Medications
+      </button>
+      
+      <div *ngIf="!isMedsCollapsed" class="mt-3">
+    
+        <h5>{{ medication.name }} - {{ medication.dosage }}</h5>
+        <p><strong>Instructions:</strong> {{ medication.instructions }}</p>
+        <label class="form-check-label">
+          <input type="checkbox" [(ngModel)]="medication.isGiven"> Administered
+        </label>
+      </div>
+      
+
+      <div class="notes-section mt-4">
+        <textarea class="form-control" [(ngModel)]="nurseNote" placeholder="Add nurse comment..."></textarea>
+        <button (click)="saveNote()" class="btn btn-success mt-2">Save Comment</button>
+      </div>
+    </div> -->
+
+    <div class="container-fluid">
+ 
+      <div class="row pt-3">
+        <div class="col-lg-3 col-md-4 col-sm-12 mb-2">
+          <input type="text" class="form-control" placeholder="Search...">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+          <select class="form-select">
+            <option value="To do">To do</option>
+          
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+          <select class="form-select">
+            <option value="PM HHA">PM HHA</option>
+   
+          </select>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 text-md-right text-center">
+          <button class="btn btn-primary mb-2">Work offline</button>
+          <button class="btn btn-secondary mb-2" style="margin-left: 30px;">+ More</button>
+        </div>
+      </div>
+
+      <div class="d-flex" style="border-bottom: 1px solid gray;">
+        <span class="fw-bold" style="color: aqua;">
+        change not to order
+      </span>
+      <span class="fw-bold" style="color: aqua; margin-left: 20px !important; margin-bottom: 10px !important;">
+        change not to order
+      </span>
+      </div>
+    
+  
+      <div class="task-list">
+   
+        <div class="card mb-3" >
+          <div class="card-body">
+            <span class="fw-bold mb-2" style="color: aqua;">CARE</span>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="task-details">
+                <img src="../../../../assets/alorahomess.png" alt="Patient Image" class="rounded-circle" width="50" height="50">
+                <span class="fw-bold" style="color: aqua; margin-left: 20px !important;">Adams-Good, Ruth 104</span>
+                <span class="badge bg-info text-white ms-2">Bio</span>
+              </div>
+              <small class="text-muted">12:00AM Oct 12   <span class="badge bg-info text-white ms-2" style="background-color: green !important; padding: 10px !important;">Complete</span></small>
+            
+            </div>
+            <p class="mt-2">BIO/History Review</p>
+          </div>
+        </div>
+    
+      
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="task-details">
+                <img src="..." alt="Patient Image" class="rounded-circle" width="40">
+                <span class="fw-bold">Anderson, Samantha (S) 103</span>
+                <span class="badge bg-secondary ms-2">Service</span>
+                <span class="badge bg-secondary ms-2">5 minutes</span>
+              </div>
+              <small class="text-muted">3:00PM</small>
+            </div>
+            <p class="mt-2">Check date/time on caddy and pour meds in to receptacle or resident's hand. Report difficulty swallowing meds to RN.</p>
+          </div>
+        </div>
+    
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="task-details">
+                <img src="..." alt="Patient Image" class="rounded-circle" width="40">
+                <span class="fw-bold">Zimmer, Kobe B 204a</span>
+                <span class="badge bg-secondary ms-2">Service</span>
+                <span class="badge bg-secondary ms-2">15 minutes</span>
+              </div>
+              <small class="text-muted">3:00PM</small>
+            </div>
+            <p class="mt-2">Track and document bowel movements due to history or risk of constipation. Notify nurse if no BM X 3 days.</p>
+          </div>
+        </div>
+    
+     
+        <div class="row">
+          <div class="col text-end">
+            <button class="btn btn-success me-2">Complete</button>
+            <button class="btn btn-secondary">PM</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+
+<!-- corrct navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">WebSiteName</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" style="margin-left: auto !important;">
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Page 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Page 2</a>
+            </li>
+    
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+           
+    
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#"><i class="bi bi-person-fill"></i> Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+    
+    
+</section>

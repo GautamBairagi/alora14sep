@@ -1,0 +1,52 @@
+<section>
+    
+    <div class="container">
+        
+        <div class="row mt-2 ">
+            <h2>View all care givers</h2>
+            <hr>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
+              <button type="button" [routerLink]="['/superAdmin/nurses']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Nurse</button>
+            </div>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+                
+                <div class="table-responsive">
+                    <table class="table table-hover" style="text-wrap: nowrap;">
+                      <thead>
+                        <tr>
+                          <th>Sr No</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <!-- <th>Password</th> -->
+                          <th>Mobile Number</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let admin of paginatedNurses; let i = index">
+                          <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                          <td>{{ admin.name }}</td>
+                          <td>{{ admin.email }}</td>
+                          <!-- <td>{{ admin.password }}</td> -->
+                          <td>{{ admin.mobileNumber }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <!-- Pagination Controls -->
+                  <div class="pagination-controls">
+                    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+                    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+                    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+                  </div>
+                  
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</section>

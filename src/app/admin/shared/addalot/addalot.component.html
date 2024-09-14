@@ -1,0 +1,54 @@
+<!-- 
+<section> 
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+                <h2>Add Alot </h2>
+                <hr>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div class="container">
+                      <div class="row mt-2">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="name">patientName</label>
+                          <input type="text" id="patientName" placeholder="Enter name here" class="form-control" formControlName="patientName">
+                          <div *ngIf="myForm.get('patientName')?.touched && myForm.get('patientName')?.invalid">
+                            <small *ngIf="myForm.get('patientName')?.errors?.['required']" class="text-danger">Name is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="email">nurseName</label>
+                          <input type="email" id="nurseName" placeholder="Enter email here" class="form-control" formControlName="nurseName">
+                          <div *ngIf="myForm.get('nurseName')?.touched && myForm.get('nurseName')?.invalid">
+                            <small *ngIf="myForm.get('nurseName')?.errors?.['required']" class="text-danger">Email is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="formDate">formDate</label>
+                          <input type="date" id="formDate" placeholder="Enter password here" class="form-control" formControlName="formDate">
+                          <div *ngIf="myForm.get('formDate')?.touched && myForm.get('formDate')?.invalid">
+                            <small *ngIf="myForm.get('formDate')?.errors?.['required']" class="text-danger">Password is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="mobileNumber">toDate</label>
+                          <input type="date" id="toDate" placeholder="Enter mobile number here" class="form-control" formControlName="toDate">
+                          <div *ngIf="myForm.get('toDate')?.touched && myForm.get('toDate')?.invalid">
+                            <small *ngIf="myForm.get('toDate')?.errors?.['required']" class="text-danger">Mobile Number is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mt-4">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                          <button type="submit" class="btn btn-primary w-25" [disabled]="myForm.invalid">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+</section> -->

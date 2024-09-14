@@ -1,0 +1,237 @@
+<section>
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+                <h2>Add Patient </h2>
+                <hr>
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div class="container">
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                          <label for="firstname">First Name</label>
+                          <input type="text" id="firstname" placeholder="Enter first name here" class="form-control" formControlName="firstname">
+                          <div *ngIf="myForm.get('firstname')?.touched && myForm.get('firstname')?.invalid">
+                            <small *ngIf="myForm.get('firstname')?.errors?.['required']" class="text-danger">First Name is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="middlename">Middle Name</label>
+                          <input type="text" id="middlename" placeholder="Enter middle name here" class="form-control" formControlName="middlename">
+                          <div *ngIf="myForm.get('middlename')?.touched && myForm.get('middlename')?.invalid">
+                            <small *ngIf="myForm.get('middlename')?.errors?.['required']" class="text-danger">Middle Name is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="lastname">Last Name</label>
+                          <input type="text" id="lastname" placeholder="Enter last name here" class="form-control" formControlName="lastname">
+                          <div *ngIf="myForm.get('lastname')?.touched && myForm.get('lastname')?.invalid">
+                            <small *ngIf="myForm.get('lastname')?.errors?.['required']" class="text-danger">Last Name is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="dateofBirth">Date of Birth</label>
+                          <input type="date" id="dateofBirth" placeholder="Enter date of birth here" class="form-control" formControlName="dateofBirth">
+                          <div *ngIf="myForm.get('dateofBirth')?.touched && myForm.get('dateofBirth')?.invalid">
+                            <small *ngIf="myForm.get('dateofBirth')?.errors?.['required']" class="text-danger">Date of Birth is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="gender">Gender</label>
+                          <input type="text" id="gender" placeholder="Enter gender here" class="form-control" formControlName="gender">
+                          <div *ngIf="myForm.get('gender')?.touched && myForm.get('gender')?.invalid">
+                            <small *ngIf="myForm.get('gender')?.errors?.['required']" class="text-danger">Gender is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="ethnicity">Ethnicity</label>
+                          <input type="text" id="ethnicity" placeholder="Enter ethnicity here" class="form-control" formControlName="ethnicity">
+                          <div *ngIf="myForm.get('ethnicity')?.touched && myForm.get('ethnicity')?.invalid">
+                            <small *ngIf="myForm.get('ethnicity')?.errors?.['required']" class="text-danger">ethnicity is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="addressOne">Address One</label>
+                          <input type="text" id="addressOne" placeholder="Enter address one here" class="form-control" formControlName="addressOne">
+                          <div *ngIf="myForm.get('addressOne')?.touched && myForm.get('addressOne')?.invalid">
+                            <small *ngIf="myForm.get('addressOne')?.errors?.['required']" class="text-danger">Address One is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="addressTwo">Address Two</label>
+                          <input type="text" id="addressTwo" placeholder="Enter address two here" class="form-control" formControlName="addressTwo">
+                          <div *ngIf="myForm.get('addressTwo')?.touched && myForm.get('addressTwo')?.invalid">
+                            <small *ngIf="myForm.get('addressTwo')?.errors?.['required']" class="text-danger">addressTwo is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="city">City</label>
+                          <input type="text" id="city" placeholder="Enter city here" class="form-control" formControlName="city">
+                          <div *ngIf="myForm.get('city')?.touched && myForm.get('city')?.invalid">
+                            <small *ngIf="myForm.get('city')?.errors?.['required']" class="text-danger">City is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="state">State</label>
+                          <input type="text" id="state" placeholder="Enter state here" class="form-control" formControlName="state">
+                          <div *ngIf="myForm.get('state')?.touched && myForm.get('state')?.invalid">
+                            <small *ngIf="myForm.get('state')?.errors?.['required']" class="text-danger">State is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="zip">Zip Code</label>
+                          <input type="text" id="zip" placeholder="Enter zip code here" class="form-control" formControlName="zip">
+                          <div *ngIf="myForm.get('zip')?.touched && myForm.get('zip')?.invalid">
+                            <small *ngIf="myForm.get('zip')?.errors?.['required']" class="text-danger">Zip Code is required.</small>
+                            <small *ngIf="myForm.get('zip')?.errors?.['pattern']" class="text-danger">Invalid zip code format.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="instruction">Instruction</label>
+                          <input type="text" id="instruction" placeholder="Enter instruction here" class="form-control" formControlName="instruction">
+                          <div *ngIf="myForm.get('instruction')?.touched && myForm.get('instruction')?.invalid">
+                            <small *ngIf="myForm.get('instruction')?.errors?.['required']" class="text-danger">instruction is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="MRNnumber">MRN Number</label>
+                          <input type="text" id="MRNnumber" placeholder="Enter MRN number here" class="form-control" formControlName="MRNnumber">
+                          <div *ngIf="myForm.get('MRNnumber')?.touched && myForm.get('MRNnumber')?.invalid">
+                            <small *ngIf="myForm.get('MRNnumber')?.errors?.['required']" class="text-danger">MRN Number is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="email">Email</label>
+                          <input type="email" id="email" placeholder="Enter email here" class="form-control" formControlName="email">
+                          <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
+                            <small *ngIf="myForm.get('email')?.errors?.['required']" class="text-danger">Email is required.</small>
+                            <small *ngIf="myForm.get('email')?.errors?.['email']" class="text-danger">Invalid email format.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="homePhone">Home Phone</label>
+                          <input type="tel" id="homePhone" placeholder="Enter home phone here" class="form-control" formControlName="homePhone">
+                          <div *ngIf="myForm.get('homePhone')?.touched && myForm.get('homePhone')?.invalid">
+                            <small *ngIf="myForm.get('homePhone')?.errors?.['required']" class="text-danger">home Phone is required.</small>
+                            <small *ngIf="myForm.get('homePhone')?.errors?.['pattern']" class="text-danger">Invalid home phone number format.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="mobilePhone">Mobile Phone</label>
+                          <input type="tel" id="mobilePhone" placeholder="Enter mobile phone here" class="form-control" formControlName="mobilePhone">
+                          <div *ngIf="myForm.get('mobilePhone')?.touched && myForm.get('mobilePhone')?.invalid">
+                            <small *ngIf="myForm.get('mobilePhone')?.errors?.['required']" class="text-danger">Mobile Phone is required.</small>
+                            <small *ngIf="myForm.get('mobilePhone')?.errors?.['pattern']" class="text-danger">Invalid phone number format.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="otherPhone">Other Phone</label>
+                          <input type="tel" id="otherPhone" placeholder="Enter other phone here" class="form-control" formControlName="otherPhone">
+                          <div *ngIf="myForm.get('otherPhone')?.touched && myForm.get('otherPhone')?.invalid">
+                            <small *ngIf="myForm.get('otherPhone')?.errors?.['required']" class="text-danger">otherPhone is required.</small>
+                            <small *ngIf="myForm.get('otherPhone')?.errors?.['pattern']" class="text-danger">Invalid other phone number format.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="contactName">Contact Name</label>
+                          <input type="text" id="contactName" placeholder="Enter contact name here" class="form-control" formControlName="contactName">
+                          <div *ngIf="myForm.get('contactName')?.touched && myForm.get('contactName')?.invalid">
+                            <small *ngIf="myForm.get('contactName')?.errors?.['required']" class="text-danger">Contact Name is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="phoneOne">Phone One</label>
+                          <input type="tel" id="phoneOne" placeholder="Enter phone one here" class="form-control" formControlName="phoneOne">
+                          <div *ngIf="myForm.get('phoneOne')?.touched && myForm.get('phoneOne')?.invalid">
+                            <small *ngIf="myForm.get('phoneOne')?.errors?.['required']" class="text-danger">Phone One is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="phoneTwo">Phone Two</label>
+                          <input type="tel" id="phoneTwo" placeholder="Enter phone two here" class="form-control" formControlName="phoneTwo">
+                          <div *ngIf="myForm.get('phoneTwo')?.touched && myForm.get('phoneTwo')?.invalid">
+                            <small *ngIf="myForm.get('phoneTwo')?.errors?.['required']" class="text-danger">Phone Two is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="emergencyEmail">Emergency Email</label>
+                          <input type="email" id="emergencyEmail" placeholder="Enter emergency email here" class="form-control" formControlName="emergencyEmail">
+                          <div *ngIf="myForm.get('emergencyEmail')?.touched && myForm.get('emergencyEmail')?.invalid">
+                            <small *ngIf="myForm.get('emergencyEmail')?.errors?.['required']" class="text-danger">Emergency Email is required.</small>
+                            <small *ngIf="myForm.get('emergencyEmail')?.errors?.['email']" class="text-danger">Invalid email format.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="language">Language</label>
+                          <input type="text" id="language" placeholder="Enter language here" class="form-control" formControlName="language">
+                          <div *ngIf="myForm.get('language')?.touched && myForm.get('language')?.invalid">
+                            <small *ngIf="myForm.get('language')?.errors?.['required']" class="text-danger">language is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="image">Image</label>
+                          <input type="file" id="image" placeholder="Enter image here" class="form-control" formControlName="image">
+                          <div *ngIf="myForm.get('image')?.touched && myForm.get('image')?.invalid">
+                            <small *ngIf="myForm.get('image')?.errors?.['required']" class="text-danger">image is required.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="comments">Comments</label>
+                          <textarea id="comments" placeholder="Enter comments here" class="form-control" formControlName="comments"></textarea>
+                          <div *ngIf="myForm.get('comments')?.touched && myForm.get('comments')?.invalid">
+                            <small *ngIf="myForm.get('language')?.errors?.['required']" class="text-danger">language is required.</small>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="row mt-4">
+                        <div class="col-md-12 text-center">
+                          <button type="submit" class="btn btn-primary w-25" [disabled]="myForm.invalid">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  
+                  
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</section>

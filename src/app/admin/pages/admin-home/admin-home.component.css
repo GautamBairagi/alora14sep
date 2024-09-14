@@ -1,0 +1,262 @@
+/* sidebar section css */
+.unique-sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    border-right: 1px solid #dee2e6;
+    padding: 15px 0;
+    transition: width 0.3s ease;
+}
+
+.unique-sidebar.collapsed {
+    width: 60px;
+    border: none;
+    /* Remove border when collapsed */
+}
+
+.unique-logo-section {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.unique-logo {
+    max-width: 150px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-logo {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.unique-search-section {
+    position: relative;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-search-section {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+}
+
+.unique-search-input {
+    width: 100%;
+    border: 1px solid #dee2e6;
+}
+
+.unique-search-icon {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #999;
+}
+
+.unique-nav {
+    padding-left: 0;
+}
+
+.unique-nav-link {
+    padding: 10px 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: padding 0.3s ease, color 0.3s ease;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.unique-sidebar.collapsed .unique-nav-link {
+    border: none;
+}
+
+.unique-nav-link:hover,
+.unique-nav-link.active {
+    color: #5090c1;
+    border-color: #5090c1;
+}
+
+
+.unique-nav-link {
+    border-left: 3px solid #dee2e6;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+
+.unique-sidebar.collapsed .unique-nav-link {
+    border-left: none;
+}
+
+.unique-nav-link:hover,
+.unique-nav-link.active {
+    border-left-color: #5090c1;
+}
+
+.unique-icon {
+    margin-right: 10px;
+    color: #5090c1;
+    font-size: 16px;
+    transition: font-size 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-icon {
+    font-size: 24px;
+    margin-right: 0;
+}
+
+.unique-nav-text {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-nav-text {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.unique-sidebar.collapsed .unique-nav-text:hover {
+    margin-left: 20px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.unique-chevron {
+    margin-left: auto;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-chevron {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.unique-submenu {
+    background-color: #e9ecef;
+    padding-left: 15px;
+    transition: padding-left 0.3s ease;
+}
+
+.unique-sidebar.collapsed .unique-submenu {
+    padding-left: 40px;
+}
+
+.navbarul {
+    margin-left: auto !important;
+
+}
+
+/* other new css in stup midia size */
+@media (max-width: 960px) {
+    #sidebar {
+        position: fixed !important;
+    }
+
+    .accordion {
+        z-index: -1 !important;
+    }
+
+    .faqhome {
+        z-index: -1;
+    }
+}
+
+.unique-sidebar {
+    z-index: 1 !important;
+}
+
+/* Unique Classes to Avoid Conflicts */
+.welcome-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.welcome-text {
+    bottom: 20px;
+    left: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.help-section {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.enhancement-section h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.enhancement-section ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+.faq-section h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.faq-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.faq-question {
+    text-decoration: none;
+    color: #007bff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.faq-question.active {
+    font-weight: bold;
+}
+
+.faq-answer {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+}
+
+.alerts-section h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.alerts-section p {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 2rem;
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+
+
+
+.info-box-content {
+    padding-right: 0 !important;
+}
+
+
+.unique-sidebar{
+    overflow-y: scroll;
+    height: 810px;
+
+}
