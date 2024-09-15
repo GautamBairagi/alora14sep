@@ -1,14 +1,13 @@
-<!-- 
-<section>
+ <section>
     
     <div class="container">
         
         <div class="row mt-3 ">
-            <h2 style="background-color: #438eb9; color: white;">View all Alot</h2>
+            <h2 style="background-color: #438eb9; color: white;">View all Allottment</h2>
             <hr>
             
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
-              <button type="button" [routerLink]="['/Admin/Addalot']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Alot</button>
+              <button type="button" [routerLink]="['/Admin/Addalot']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Allot</button>
             </div>
             
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
@@ -20,7 +19,7 @@
                           <th>Sr No</th>
                           <th>Patient Name</th>
                           <th>Nurse Name</th>
-                          <th>Form Date</th>
+                          <th>From Date</th>
                           <th>To Date</th>
                           <th>Action</th>
                         </tr>
@@ -33,12 +32,12 @@
                           <td>{{ admin.formDate }}</td>
                           <td>{{ admin.toDate }}</td>
                           <td>  
-                            <button (click)="nurseById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button (click)="allotedById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button>
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Nurse</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Allot</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
@@ -46,26 +45,30 @@
                                       <div class="container mt-2 mb-3">
                                         <div class="row">
                                           <div class="col-lg-6">
-                                            <label for="name">First Name:</label>
-                                            <input type="text" class="form-control" id="name" [(ngModel)]="nurseByIdData.name" name="name" required />
+                                            <label for="name">Patient Name:</label>
+                                            <input type="text" class="form-control" id="name" [(ngModel)]="nurseByIdData.patientName" name="name" required />
                                           </div>
                                           
                                           <div class="col-lg-6">
-                                            <label for="mobileNumber">Mobile Number:</label>
-                                            <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="nurseByIdData.mobileNumber" name="mobileNumber" required />
+                                            <label for="mobileNumber">Nurse Name</label>
+                                            <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="nurseByIdData.nurseName" name="mobileNumber" required />
                                           </div>
                                         </div>
                             
                                         <div class="row">
                                           <div class="col-lg-6">
-                                            <label for="email">Email:</label>
-                                            <input type="text" class="form-control" id="email" [(ngModel)]="nurseByIdData.email" name="email" required />
+                                            <label for="formDate">From Date</label>
+                                            <input type="date" class="form-control" id="formDate" [(ngModel)]="nurseByIdData.formDate" name="formDate" required />
+                                          </div>
+                                        </div>
+
+                                        <div class="row"></div>
+                                          <div class="col-lg-6">
+                                            <label for="toDate">To Date</label>
+                                            <input type="date" class="form-control" id="toDate" [(ngModel)]="nurseByIdData.toDate" name="toDate" required />
                                           </div>
                                         </div>
                                         
-                                        
-                                      </div>
-                                      
                                       
                                       
                                       <div class="modal-footer">
@@ -80,13 +83,13 @@
                                 </div>
                               </div>
                             </div>
-                            <button (click)="nurseById(admin.id)" class="btn btn-danger bg-transparent m-1" style="color: red;" data-bs-toggle="modal" data-bs-target="#deleteModal" ><i class="fa-solid fa-trash"></i></button>
+                            <button (click)="allotedById(admin.id)" class="btn btn-danger bg-transparent m-1" style="color: red;" data-bs-toggle="modal" data-bs-target="#deleteModal" ><i class="fa-solid fa-trash"></i></button>
                             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                   
                                   <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Nurse</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Allot</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
@@ -94,7 +97,7 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" (click)="nurseDelete(nurseByIdData)" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" (click)="allotsDeleted(nurseByIdData)" class="btn btn-primary">Save changes</button>
                                   </div>
                                 </div>
                               </div>
@@ -118,4 +121,4 @@
         
     </div>
     
-</section> -->
+</section> 

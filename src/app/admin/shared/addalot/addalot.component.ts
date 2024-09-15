@@ -11,6 +11,8 @@ import { AllService } from 'src/app/Api/all.service';
 export class AddalotComponent implements OnInit {
 
   myForm!: FormGroup;
+  nursesCount:any=[];
+  patientsCount:any=[];
 
   constructor(private fb: FormBuilder,
     private service:AllService,
@@ -19,6 +21,8 @@ export class AddalotComponent implements OnInit {
 
   userId:any
   ngOnInit(): void {
+    this.getNurses();
+    this.getPatients();
     const userIdString = sessionStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
@@ -40,6 +44,21 @@ export class AddalotComponent implements OnInit {
         this.route.navigate(["/Admin/View_alot"]);
        });
     }
+  }
+
+
+  getNurses(){
+    this.service.nursesForAdmin().subscribe((res:any)=>{
+      this.nursesCount = res.data;
+      console.log('home care nurse', this.nursesCount)
+    })
+  }
+
+  getPatients(){
+    this.service.patientsForAdmin().subscribe((res:any)=>{
+      this.patientsCount = res.data;
+      console.log('home care patient', this.patientsCount)
+    })
   }
 }
 

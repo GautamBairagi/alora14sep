@@ -16,16 +16,17 @@ export class ViewAlotComponent implements OnInit {
 
   constructor(private api:AllService,private route:Router,private fb:FormBuilder){
     this.updateForm = this.fb.group({
-      name:[''],
-      mobileNumber:[''],
-      email:[''],
+      patientName: [''],
+      nurseName: [''],
+      formDate: [''],
+      toDate: [''],
     })
   }
 
 
   
   updateNurse() {
-    this.api.updateNurseById(this.id, this.nurseByIdData).subscribe((res: any) => {
+    this.api.allotupdate(this.id, this.nurseByIdData).subscribe((res: any) => {
       console.log('Nurse updated successfully', res);
       window.location.reload()
     }, (error) => {
@@ -78,17 +79,19 @@ export class ViewAlotComponent implements OnInit {
     }
   }
 
+  
+
   id:any;
   nurseByIdData:any=[];
-nurseById(data: any) {
+  allotedById(data: any) {
   this.id = data;
-  this.api.nurseById(data).subscribe((res: any) => {
+  this.api.allotedById(data).subscribe((res: any) => {
     this.nurseByIdData = res.data;
   })
 }
 
-nurseDelete(itemDlt: any): void {
-  this.api.deleteNurse(itemDlt.id).subscribe(
+allotsDeleted(itemDlt: any): void {
+  this.api.deletealot(itemDlt.id).subscribe(
     () => {
       window.location.reload()
     },

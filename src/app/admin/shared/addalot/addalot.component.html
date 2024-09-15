@@ -1,4 +1,3 @@
-<!-- 
 <section> 
     <div class="container">
         <div class="row">
@@ -10,31 +9,51 @@
                     <div class="container">
                       <div class="row mt-2">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="name">patientName</label>
-                          <input type="text" id="patientName" placeholder="Enter name here" class="form-control" formControlName="patientName">
-                          <div *ngIf="myForm.get('patientName')?.touched && myForm.get('patientName')?.invalid">
+                          <label for="name">Patient Name</label>
+
+                          <!-- <input type="text" id="patientName" placeholder="Enter name here" class="form-control" formControlName="patientName"> -->
+                          
+                          
+                          <select formControlName="patientName" class="form-select"
+                              id="patientName">
+                              <option value="">select</option>
+                              <option *ngFor="let patientNames of patientsCount "><span>{{patientNames.firstname}}</span> </option>
+                          </select>
+
+
+
+                          <!-- <div *ngIf="myForm.get('patientName')?.touched && myForm.get('patientName')?.invalid">
                             <small *ngIf="myForm.get('patientName')?.errors?.['required']" class="text-danger">Name is required.</small>
-                          </div>
+                          </div> -->
+
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="email">nurseName</label>
-                          <input type="email" id="nurseName" placeholder="Enter email here" class="form-control" formControlName="nurseName">
-                          <div *ngIf="myForm.get('nurseName')?.touched && myForm.get('nurseName')?.invalid">
+                          <label for="email">Nurse Name</label>
+                          <!-- <input type="email" id="nurseName" placeholder="Enter email here" class="form-control" formControlName="nurseName"> -->
+                          
+                          
+                          <select formControlName="nurseName" class="form-select"
+                              id="nurseName">
+                              <option value="">select</option>
+                              <option *ngFor="let nurseNames of nursesCount "><span>{{nurseNames.name}}</span> </option>
+                          </select>
+                          
+                          <!-- <div *ngIf="myForm.get('nurseName')?.touched && myForm.get('nurseName')?.invalid">
                             <small *ngIf="myForm.get('nurseName')?.errors?.['required']" class="text-danger">Email is required.</small>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                   
                       <div class="row mt-4">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="formDate">formDate</label>
+                          <label for="formDate">Form Date</label>
                           <input type="date" id="formDate" placeholder="Enter password here" class="form-control" formControlName="formDate">
                           <div *ngIf="myForm.get('formDate')?.touched && myForm.get('formDate')?.invalid">
                             <small *ngIf="myForm.get('formDate')?.errors?.['required']" class="text-danger">Password is required.</small>
                           </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="mobileNumber">toDate</label>
+                          <label for="mobileNumber">To Date</label>
                           <input type="date" id="toDate" placeholder="Enter mobile number here" class="form-control" formControlName="toDate">
                           <div *ngIf="myForm.get('toDate')?.touched && myForm.get('toDate')?.invalid">
                             <small *ngIf="myForm.get('toDate')?.errors?.['required']" class="text-danger">Mobile Number is required.</small>
@@ -51,4 +70,4 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>

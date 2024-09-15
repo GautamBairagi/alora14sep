@@ -75,8 +75,17 @@ export class AllService extends HttpService {
     return this.get(superAdminEndPoints.nursesById + id )
    }
 
+   allotedById(id:any){
+    return this.get(superAdminEndPoints.allotedByIdById + id )
+   }
+
+
    updateNurseById(id: any, updatedData: any) {
     return this.http.put(`https://alora-plus.vercel.app/api/v1/nurse/${id}`, updatedData);
+  }
+
+  allotupdate(id: any, updatedData: any) {
+    return this.http.put(`https://alora-plus.vercel.app/api/v1/allot/${id}`, updatedData);
   }
 
    deleteNurse(id:any){
@@ -86,6 +95,12 @@ export class AllService extends HttpService {
    addpatientsForSuperAdmin(data :any){
     return this.post(superAdminEndPoints.addpatients, data)
    }
+
+   deletealot(id:any){
+    return this.delete(superAdminEndPoints.allotById + id )
+   }
+
+
   //  showSuccess(p0: string) {
   //   this._tos.success('Hello World!', 'Toastr fun!');
   // }
