@@ -9,7 +9,12 @@ import { Router } from '@angular/router';
 })
 export class PatientComponent {
 
-  constructor(private route :Router){}
+  constructor(private route :Router)
+  {
+    this.nursename=localStorage.getItem('patient_name')
+  }
+  nursename:any;
+
 
   toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
@@ -28,8 +33,9 @@ export class PatientComponent {
 
 
   logouts() {
-    localStorage.removeItem('nurse_token')
-    localStorage.removeItem('nurse_name')
+    
+    localStorage.removeItem('patient_token')
+    localStorage.removeItem('patient_name')
     localStorage.removeItem('id')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }

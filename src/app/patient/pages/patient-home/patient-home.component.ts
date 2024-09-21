@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PatientHomeComponent {
 
+  constructor (){
+    this.nursename=localStorage.getItem('patient_name')
+  }
+  nursename:any;
+
 }
