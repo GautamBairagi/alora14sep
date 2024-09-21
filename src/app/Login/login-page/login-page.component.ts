@@ -53,6 +53,7 @@ else{
         localStorage.setItem('nurse_token',res.token) 
         localStorage.setItem('id',res.id)
         localStorage.setItem('nurse_name',res.name)
+        localStorage.setItem('doctorId',res.doctorId)
         this.router.navigate(["/nurse/nurse_home"])
       }
        else if (res.role === 'patient' ) {

@@ -127,7 +127,11 @@ export class AllService extends HttpService {
   }
 
   clockStatus(){
-    return this.get(superAdminEndPoints.clockStatus)
+    return this.get(superAdminEndPoints.clockStatusForAdmin)
+   }
+   
+   clockStatusPost(payload: any){
+    return this.post(superAdminEndPoints.clockStatus,payload)
    }
 
 
