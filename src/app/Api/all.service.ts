@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../Http/httpServices';
 import { superAdminEndPoints } from '../Urls/ApiUrl';
 // import { ToastrService } from 'ngx-toastr';
+import { Observable,BehaviorSubject  } from 'rxjs';
+
 
 
 @Injectable({
@@ -58,8 +60,24 @@ export class AllService extends HttpService {
     return this.get(superAdminEndPoints.getPatientsForAdmin)
    }
 
+   patientsForNurse(){
+    return this.get(superAdminEndPoints.getPatientsForNurse)
+   }
+
+   
    patientById(id:any){
     return this.get(superAdminEndPoints.patientById + id )
+   }
+
+   private patientDetailDataSubject = new BehaviorSubject<any>(null);
+   patientDetailData$ = this.patientDetailDataSubject.asObservable();
+ 
+   setPatientDetailData(data: any) {
+     this.patientDetailDataSubject.next(data);
+   }
+ 
+   getPatientDetailData() {
+     return this.patientDetailDataSubject.getValue();
    }
 
    updatePatientById(id: any, updatedData: any) {
@@ -98,6 +116,18 @@ export class AllService extends HttpService {
 
    deletealot(id:any){
     return this.delete(superAdminEndPoints.allotById + id )
+   }
+
+   clockIn(nurseId: number,nurseName: any): Observable<any> {
+    return this.post( superAdminEndPoints.clockInNurse , { nurseId, nurseName });
+  }
+
+  clockOut(nurseId: number,nurseName: any): Observable<any> {
+    return this.post( superAdminEndPoints.clockOutNurse , { nurseId, nurseName });
+  }
+
+  clockStatus(){
+    return this.get(superAdminEndPoints.clockStatus)
    }
 
 

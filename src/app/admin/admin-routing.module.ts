@@ -9,6 +9,7 @@ import { ViewPatientsComponent } from './pages/view-patients/view-patients.compo
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { AddalotComponent } from './shared/addalot/addalot.component';
 import { ViewAlotComponent } from './pages/view-alot/view-alot.component';
+import { ClockStatusComponent } from './pages/clock-status/clock-status.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -49,6 +50,10 @@ const routes: Routes = [
       {
         path:'View_alot',
         component:ViewAlotComponent
+      },
+      {
+        path:'clock_status',
+        component:ClockStatusComponent
       },
     ]
 

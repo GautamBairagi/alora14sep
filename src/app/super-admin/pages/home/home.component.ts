@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor (){ this.name=sessionStorage.getItem('superadmin_name')}
+  constructor (){ this.name=localStorage.getItem('superadmin_name')}
 
   name:any
   ngOnInit(): void {

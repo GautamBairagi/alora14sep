@@ -12,6 +12,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddalotComponent } from './shared/addalot/addalot.component';
 import { ViewAlotComponent } from './pages/view-alot/view-alot.component';
+import { ClockStatusComponent } from './pages/clock-status/clock-status.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ViewAlotComponent } from './pages/view-alot/view-alot.component';
     ViewPatientsComponent,
     AdminDashboardComponent,
     AddalotComponent,
-    ViewAlotComponent
+    ViewAlotComponent,
+    ClockStatusComponent
   ],
   imports: [
     CommonModule,

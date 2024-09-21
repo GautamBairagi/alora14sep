@@ -8,6 +8,7 @@ import { NurseHomeComponent } from './pages/nurse-home/nurse-home.component';
 import { NurseDashboardComponent } from './pages/nurse-dashboard/nurse-dashboard.component';
 import { NursePatientComponent } from './shared/nurse-patient/nurse-patient.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewPatientDetailsComponent } from './pages/view-patient-details/view-patient-details.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ViewPatientComponent,
     NurseHomeComponent,
     NurseDashboardComponent,
-    NursePatientComponent
+    NursePatientComponent,
+    ViewPatientDetailsComponent
   ],
   imports: [
     CommonModule,

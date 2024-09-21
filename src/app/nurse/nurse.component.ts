@@ -11,7 +11,7 @@ export class NurseComponent {
   constructor(
     private route :Router
   ){
-    this.nursename=sessionStorage.getItem('nurse_name')
+    this.nursename=localStorage.getItem('nurse_name')
   }
   nursename:any;
 
@@ -32,9 +32,9 @@ export class NurseComponent {
 
 
   logouts() {
-    sessionStorage.removeItem('nurse_token')
-    sessionStorage.removeItem('nurse_name')
-    sessionStorage.removeItem('id')
+    localStorage.removeItem('nurse_token')
+    localStorage.removeItem('nurse_name')
+    localStorage.removeItem('id')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }
 }

@@ -260,3 +260,8 @@
     height: 810px;
 
 }
+
+.alert {
+    transition: opacity 0.5s ease;
+  }
+  

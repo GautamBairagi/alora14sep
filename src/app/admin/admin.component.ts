@@ -11,7 +11,7 @@ export class AdminComponent {
   constructor(
     private route :Router
   ){
-    this.homecarename=sessionStorage.getItem('homecare_name')
+    this.homecarename=localStorage.getItem('homecare_name')
   }
 
   homecarename:any;
@@ -33,9 +33,9 @@ export class AdminComponent {
 
 
   logouts() {
-    sessionStorage.removeItem('homecare_token')
-    sessionStorage.removeItem('id')
-    sessionStorage.removeItem('homecare_name')
+    localStorage.removeItem('homecare_token')
+    localStorage.removeItem('id')
+    localStorage.removeItem('homecare_name')
     this.route.navigateByUrl("/", { replaceUrl: true })
   }
 }

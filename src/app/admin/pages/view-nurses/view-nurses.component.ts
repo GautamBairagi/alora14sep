@@ -40,13 +40,13 @@ export class ViewNursesComponent implements OnInit {
 
   userId:any
   ngOnInit(): void {
-    const userIdString = sessionStorage.getItem('id');
-    this.userId = userIdString ? parseInt(userIdString, 10) : null;
+    localStorage.getItem('id')
+    // const userIdString = localStorage.getItem('id');
+    // this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
     console.log( 'admin id', this.userId);
     this.getNurses();
   }
-
 
   
   getNurses(){

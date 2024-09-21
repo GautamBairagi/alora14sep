@@ -23,7 +23,7 @@ export class AddalotComponent implements OnInit {
   ngOnInit(): void {
     this.getNurses();
     this.getPatients();
-    const userIdString = sessionStorage.getItem('id');
+    const userIdString = localStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
     console.log( 'admin id', this.userId);

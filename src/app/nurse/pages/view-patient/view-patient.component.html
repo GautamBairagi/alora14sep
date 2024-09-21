@@ -4,7 +4,8 @@
             <h2 style="background-color: #438eb9; color: white;">View all patients</h2>
             <hr>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
-              <button type="button" [routerLink]="['/nurse/nurse_patient']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Patient</button>
+              
+              
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
                 <div class="table-responsive">
@@ -108,98 +109,120 @@
 
     <div class="container-fluid">
  
-      <div class="row pt-3">
-        <div class="col-lg-3 col-md-4 col-sm-12 mb-2">
-          <input type="text" class="form-control" placeholder="Search...">
+      <div class="row pt-3 justify-content-end">
+        
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <input type="text" class="form-control m-2" placeholder="Search...">
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-          <input type="date" class="form-control">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <button class="btn btn-secondary m-2" [routerLink]="'/nurse/nurse_patient'" >+ More</button>
         </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-          <select class="form-select">
-            <option value="To do">To do</option>
-          
-          </select>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-          <select class="form-select">
-            <option value="PM HHA">PM HHA</option>
-   
-          </select>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 text-md-right text-center">
-          <button class="btn btn-primary mb-2">Work offline</button>
-          <button class="btn btn-secondary mb-2" style="margin-left: 30px;">+ More</button>
-        </div>
+        
       </div>
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Alloted Patient
+</button>
 
-      <div class="d-flex" style="border-bottom: 1px solid gray;">
-        <span class="fw-bold" style="color: aqua;">
-        change not to order
-      </span>
-      <span class="fw-bold" style="color: aqua; margin-left: 20px !important; margin-bottom: 10px !important;">
-        change not to order
-      </span>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Sr No</th>
+              <th>Sr No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        
+      </div>
+      
+
+      <div class="d-flex mt-2" style="border-bottom: 1px solid gray;">
+       <h4>All Patients</h4>
       </div>
     
   
       <div class="task-list">
-   
-        <div class="card mb-3" >
+  
+        <div class="card w-75" *ngFor="let p of patientsCount">
           <div class="card-body">
-            <span class="fw-bold mb-2" style="color: aqua;">CARE</span>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="task-details">
-                <img src="../../../../assets/alorahomess.png" alt="Patient Image" class="rounded-circle" width="50" height="50">
-                <span class="fw-bold" style="color: aqua; margin-left: 20px !important;">Adams-Good, Ruth 104</span>
-                <span class="badge bg-info text-white ms-2">Bio</span>
-              </div>
-              <small class="text-muted">12:00AM Oct 12   <span class="badge bg-info text-white ms-2" style="background-color: green !important; padding: 10px !important;">Complete</span></small>
             
-            </div>
-            <p class="mt-2">BIO/History Review</p>
-          </div>
-        </div>
-    
-      
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="task-details">
-                <img src="..." alt="Patient Image" class="rounded-circle" width="40">
-                <span class="fw-bold">Anderson, Samantha (S) 103</span>
-                <span class="badge bg-secondary ms-2">Service</span>
-                <span class="badge bg-secondary ms-2">5 minutes</span>
+            <div class="container" style="margin: 0%;padding: 0%;">
+              
+              <div class="row">
+                
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <img src="{{p.image}}" alt="Patient Image" class="rounded-circle" width="50" height="50">
+                  <span class="fw-bold" style="color: #5090c1; margin-left: 20px !important;cursor: pointer;" routerLink="/nurse/patient_details" > {{ p.firstname }} {{ p.middlename }} {{ p.lastname }}  </span>
+                <span routerLink="/nurse/patient_details" class="badge bg-info text-white ms-2" style="cursor: pointer;">Bio</span>
+                </div>   
+                
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-end">
+                  <button class="btn btn-success " style="background-color: green !important;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">Complete</button>
+                </div>
+                            
+                
               </div>
-              <small class="text-muted">3:00PM</small>
-            </div>
-            <p class="mt-2">Check date/time on caddy and pour meds in to receptacle or resident's hand. Report difficulty swallowing meds to RN.</p>
-          </div>
-        </div>
-    
 
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="task-details">
-                <img src="..." alt="Patient Image" class="rounded-circle" width="40">
-                <span class="fw-bold">Zimmer, Kobe B 204a</span>
-                <span class="badge bg-secondary ms-2">Service</span>
-                <span class="badge bg-secondary ms-2">15 minutes</span>
+              
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+                  <p> <i class="fa-solid fa-hospital-user"></i> | {{ p.gender }} / <span> DOB : {{p.dateofBirth}} </span> / Ethnicity : {{ p.ethnicity }} </p>
+                </div>
               </div>
-              <small class="text-muted">3:00PM</small>
+              
+
+              
+              <div class="row">
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <p (click)="patientById(p.id)"  routerLink="/nurse/patient_details" style="cursor: pointer;"><i class="fa-duotone fa-solid fa-user"></i> <span style="margin-left: 10px;">More Details</span></p>
+                </div>
+                
+              </div>
+              
+              
             </div>
-            <p class="mt-2">Track and document bowel movements due to history or risk of constipation. Notify nurse if no BM X 3 days.</p>
+            
           </div>
         </div>
+
+<div *ngIf="!patientsCount.length" >
+  <p>No patient data available..</p>
+</div>
+ 
     
-     
-        <div class="row">
-          <div class="col text-end">
-            <button class="btn btn-success me-2">Complete</button>
-            <button class="btn btn-secondary">PM</button>
-          </div>
-        </div>
       </div>
     </div> 
     

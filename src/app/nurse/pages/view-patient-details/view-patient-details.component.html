@@ -1,0 +1,121 @@
+<section>
+  
+    <div *ngIf="patientDetailData">
+        <div class="container">
+          <div class="profile-container">
+            <div class="profile-header">
+              <img [src]="patientDetailData.image" alt="Profile Picture" class="profile-image">
+              <h2>{{ patientDetailData.firstname }} {{ patientDetailData.lastname }}</h2>
+              <!-- <p>Role: {{ patientDetailData.role }}</p> -->
+            </div>
+      
+            <div class="row">
+              <div class="col-md-4 profile-info">
+                <label>MRN Number:</label>
+                <p>{{ patientDetailData.MRNnumber }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>First Name:</label>
+                <p>{{ patientDetailData.firstname }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Middle Name:</label>
+                <p>{{ patientDetailData.middlename }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Last Name:</label>
+                <p>{{ patientDetailData.lastname }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Date of Birth:</label>
+                <p>{{ patientDetailData.dateofBirth }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Gender:</label>
+                <p>{{ patientDetailData.gender }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Ethnicity:</label>
+                <p>{{ patientDetailData.ethnicity }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Language:</label>
+                <p>{{ patientDetailData.language }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Home Phone:</label>
+                <p>{{ patientDetailData.homePhone }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Mobile Phone:</label>
+                <p>{{ patientDetailData.mobilePhone }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Other Phone:</label>
+                <p>{{ patientDetailData.otherPhone }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Email:</label>
+                <p>{{ patientDetailData.email }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Emergency Email:</label>
+                <p>{{ patientDetailData.emergencyEmail }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Address Line 1:</label>
+                <p>{{ patientDetailData.addressOne }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Address Line 2:</label>
+                <p>{{ patientDetailData.addressTwo }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>City:</label>
+                <p>{{ patientDetailData.city }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>State:</label>
+                <p>{{ patientDetailData.state }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>ZIP Code:</label>
+                <p>{{ patientDetailData.zip }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Contact Name:</label>
+                <p>{{ patientDetailData.contactName }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Comments:</label>
+                <p>{{ patientDetailData.comments }}</p>
+              </div>
+              <div class="col-md-4 profile-info">
+                <label>Instruction:</label>
+                <p>{{ patientDetailData.instruction }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <button class="btn btn-danger" routerLink="/nurse/view_patient" >Back</button>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+      </div>
+      
+      <!-- Loading or No Data State -->
+      <div *ngIf="!patientDetailData">
+        <p>Loading patient data...</p>
+      </div>
+      
+  
+</section>

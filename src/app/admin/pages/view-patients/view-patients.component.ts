@@ -33,7 +33,7 @@ export class ViewPatientsComponent implements OnInit {
 
   userId:any
   ngOnInit(): void {
-    const userIdString = sessionStorage.getItem('id');
+    const userIdString = localStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
     console.log( 'admin id', this.userId);

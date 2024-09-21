@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { AllService } from 'src/app/Api/all.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
- 
+
 @Component({
-  selector: 'app-view-alot',
-  templateUrl: './view-alot.component.html',
-  styleUrls: ['./view-alot.component.css']
+  selector: 'app-clock-status',
+  templateUrl: './clock-status.component.html',
+  styleUrls: ['./clock-status.component.css']
 })
-export class ViewAlotComponent implements OnInit {
+export class ClockStatusComponent implements OnInit {
 
   updateForm!:FormGroup;
   allalotsssCount:any=[];
@@ -52,7 +52,7 @@ export class ViewAlotComponent implements OnInit {
 
 
   getalotss(){
-    this.api.getallalotnursesForAdmin().subscribe((res:any)=>{
+    this.api.clockStatus().subscribe((res:any)=>{
       this.allalotsssCount = res.data;
       this.totalPages = Math.ceil(this.nursesCount.length / this.itemsPerPage);
       this.setPage(1);

@@ -48,7 +48,7 @@ export class NursePatientComponent implements OnInit {
       image: ['', Validators.required],
       comments: ['',Validators.required],
       password: ['',Validators.required],
-      doctorId:[this.userId]
+      nurseId:[this.userId]
     });
   }
 
@@ -95,7 +95,7 @@ export class NursePatientComponent implements OnInit {
      this.myForm.value.image = this.url
       this.service.addpatientsForSuperAdmin(this.myForm.value).subscribe((res:any)=>{
         console.log('form added',res)
-        this.route.navigate(["/Admin/view_patients"]);
+        this.route.navigate(["/nurse/view_patient"]);
        });
     }
   }

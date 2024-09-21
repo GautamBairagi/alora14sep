@@ -18,22 +18,63 @@ export class ViewPatientComponent implements OnInit {
 
   userId:any
   ngOnInit(): void {
-    const userIdString = sessionStorage.getItem('id');
+    localStorage.getItem('id')
+    localStorage.getItem('nurse_name')
+    const userIdString = localStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
     console.log( 'admin id', this.userId);
     this.getPatients();
+    this.getAllotedPatients()
   }
 
+  calculateAge(dateOfBirth: string): number {
+    const birthDate = new Date(dateOfBirth);
+    const today = new Date();
+    
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+  
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+  
+    return age;
+  }
+  
   
 
   getPatients(){
-    this.api.patientsForAdmin().subscribe((res:any)=>{
+    this.api.patientsForNurse().subscribe((res:any)=>{
       this.patientsCount = res.data;
       this.totalPages = Math.ceil(this.patientsCount.length / this.itemsPerPage);
       this.setPage(1); // Initialize with the first page
       console.log('patient count', this.patientsCount)
     })
+  }
+
+  nurseNameFromStorage: any = localStorage.getItem('nurse_name');
+allotedPatients: any[] = [];
+filteredPatients: any[] = [];
+  // getAllotedPatients(){
+  //   this.api.getallalotnursesForAdmin().subscribe((res:any)=>{
+  //     this.allotedPatients = res.data;
+  //     this.totalPages = Math.ceil(this.allotedPatients.length / this.itemsPerPage);
+  //     this.setPage(1); // Initialize with the first page
+  //     console.log('patient count', this.allotedPatients)
+  //   })
+  // }
+
+  getAllotedPatients() {
+    this.api.getallalotnursesForAdmin().subscribe((res: any) => {
+      this.allotedPatients = res.data;
+      this.filteredPatients = this.allotedPatients.filter(patient => patient.nurseName === this.nurseNameFromStorage);
+      
+      this.totalPages = Math.ceil(this.filteredPatients.length / this.itemsPerPage);
+      this.setPage(1); // Initialize with the first page
+  
+      console.log('Filtered patient count', this.filteredPatients);
+    });
   }
 
 
@@ -59,11 +100,18 @@ export class ViewPatientComponent implements OnInit {
 
   id:any;
   patientByIdData:any=[];
-patientById(data: any) {
-  this.id = data;
-  this.api.patientById(data).subscribe((res: any) => {
+// patientById(data: any) {
+//   this.id = data;
+//   this.api.patientById(id).subscribe((res: any) => {
+//     this.patientByIdData = res.data;
+//     this.api.setPatientDetailData(res.data);
+//   })
+// }
+patientById(id: any) {
+  this.api.patientById(id).subscribe((res: any) => {
     this.patientByIdData = res.data;
-  })
+    this.api.setPatientDetailData(res.data);  // Push data to service
+  });
 }
 
 patientDelete(itemDlt: any): void {
