@@ -57,7 +57,7 @@ else{
       }
        else if (res.role === 'patient' ) {
         localStorage.setItem('patient_token',res.token)
-        localStorage.setItem('patient_name',res.name)
+        localStorage.setItem('patient_name',res.firstname)
         this.router.navigate(["/patient"])
         // this.service.showSuccess('patient  Login','Successfully !');
       }
