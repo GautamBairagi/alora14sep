@@ -1,7 +1,104 @@
-<section>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <img src="../../assets/coming-soon.gif" alt="">
+
+<nav class="navbar navbar-expand-sm p-0 fixed-top" style="background-color: #e7eaea;">
+    <div class="container-fluid">
+        <div class="unique-logo-section">
+
+            <button class="navbar-toggler mt-3 border-0 text-light" style="background-color: #5090bf;" type="button"
+            (click)="toggleSidebar2()">
+            <i class="fa-sharp fa-light fa-bars"></i>
+            
+        </button>
+            <a href="/Home.html"> <img src="https://i.ibb.co/JFsnF04/5-6-1-1-removebg-preview.png"
+                    style="width: 150px;" class="card-img-top" alt="..."></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav navbarul">
+                <li class="nav-item" style="border-right: 1px solid gray;">
+                    <a class="nav-link" href="/Home.html">Hii, </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="logouts()">LogOut</a>
+                </li>
+            </ul>
         </div>
     </div>
-</section>
+</nav>
+<div class="row">
+    <div class="unique-sidebar col-sm-3 mt-5 p-3" id="sidebar">
+
+        <div class="unique-search-section">
+
+        </div>
+        <ul class="nav flex-column unique-nav mt-2">
+            <li class="nav-item">
+                <a class="nav-link unique-nav-link">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass unique-icon"></i>
+                    <input type="text" class="form-control unique-search-input unique-nav-text"
+                        placeholder="Menu Search...">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link unique-nav-link" (click)="toggleSidebar()">
+                    <i class="fas fa-arrow-left unique-icon"></i>
+                    <span class="unique-nav-text">Collapse</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/nurse/nurse_home" class="nav-link unique-nav-link">
+                    <i class="fas fa-home unique-icon"></i>
+                    <span class="unique-nav-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/nurse/nurse_dashboard" class="nav-link unique-nav-link">
+                    <i class="fas fa-tachometer-alt unique-icon"></i>
+                    <span class="unique-nav-text">Dashboard</span>
+                </a>
+            </li>
+          
+         
+            
+            <div class="accordion" id="helpAccordion">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#adminMenu1"
+                        role="button" aria-expanded="false" aria-controls="adminMenu1">
+
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Help</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="adminMenu1" data-bs-parent="#helpAccordion">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/for_new_home_care" class="nav-link unique-nav-link">
+                                    For New Home Care Agency
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/faq" class="nav-link unique-nav-link">
+                                    Faq
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+            </div>
+          
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-10 mt-5">
+        
+<router-outlet></router-outlet>
+        
+    </div>
+
+</div>
+<div class="d-flex justify-content-between pt-3 mb-2 pb-2" style="border-top: 3px double #E5E5E5;">
+    <div>© 2024 All Family Homecare Systems, LLC.</div>
+    <div>Version: 8.57.4.14</div>
+</div>
