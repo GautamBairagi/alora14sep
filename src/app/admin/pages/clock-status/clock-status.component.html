@@ -4,11 +4,7 @@
         
         <div class="row mt-3 ">
             <h2 style="background-color: #438eb9; color: white;">Clock Status</h2>
-            <hr>
-            
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
-              <button type="button" [routerLink]="['/Admin/Addalot']" routerLinkActive="router-link-active"  class="btn btn-primary">Add Allot</button>
-            </div>
+            <hr> 
             
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
                 
@@ -20,6 +16,7 @@
                           <th>Nurse Name</th>
                           <th>Clock in</th>
                           <th>Clock Out</th>
+                          <th>Service Time</th>
                           <!-- <th>Action</th> -->
                         </tr>
                       </thead>
@@ -27,8 +24,9 @@
                         <tr *ngFor="let admin of allalotsssCount; let i = index">
                           <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td> 
                           <td>{{ admin.nurseName }}</td>
-                          <td>{{ admin.clockInCreated_at | date: 'shortTime' }}</td>
-                          <td *ngFor="let d of admin.ClockOut" >{{ d.clockOutCreated_at | date: 'shortTime' }}</td>
+                          <td>{{ admin.clockInTime | date: 'shortTime' }}</td>
+                          <td>{{ admin.clockOutTime | date: 'shortTime' }}</td>
+                          <td> {{ admin.differenceTime }} </td>
                           <!-- <td>  
                             <button (click)="allotedById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button>
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
