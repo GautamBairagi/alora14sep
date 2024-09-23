@@ -104,28 +104,30 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <label for="instruction">Instruction</label>
-                          <input type="text" id="instruction" placeholder="Enter instruction here" class="form-control" formControlName="instruction">
-                          <div *ngIf="myForm.get('instruction')?.touched && myForm.get('instruction')?.invalid">
-                            <small *ngIf="myForm.get('instruction')?.errors?.['required']" class="text-danger">instruction is required.</small>
-                          </div>
-                        </div>
-                      </div>
-                  
-                      <div class="row mt-4">
-                        <div class="col-md-6">
                           <label for="MRNnumber">MRN Number</label>
                           <input type="text" id="MRNnumber" placeholder="Enter MRN number here" class="form-control" formControlName="MRNnumber">
                           <div *ngIf="myForm.get('MRNnumber')?.touched && myForm.get('MRNnumber')?.invalid">
                             <small *ngIf="myForm.get('MRNnumber')?.errors?.['required']" class="text-danger">MRN Number is required.</small>
                           </div>
                         </div>
+                        
+                      </div>
+                  
+                      <div class="row mt-4">
+                       
                         <div class="col-md-6">
                           <label for="email">Email</label>
                           <input type="email" id="email" placeholder="Enter email here" class="form-control" formControlName="email">
                           <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
                             <small *ngIf="myForm.get('email')?.errors?.['required']" class="text-danger">Email is required.</small>
                             <small *ngIf="myForm.get('email')?.errors?.['email']" class="text-danger">Invalid email format.</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="password">Password</label>
+                          <textarea id="password" placeholder="Enter password here" class="form-control" formControlName="password"></textarea>
+                          <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
+                            <small *ngIf="myForm.get('language')?.errors?.['required']" class="text-danger">Password is required.</small>
                           </div>
                         </div>
                       </div>
@@ -136,7 +138,7 @@
                           <input type="tel" id="homePhone" placeholder="Enter home phone here" class="form-control" formControlName="homePhone">
                           <div *ngIf="myForm.get('homePhone')?.touched && myForm.get('homePhone')?.invalid">
                             <small *ngIf="myForm.get('homePhone')?.errors?.['required']" class="text-danger">home Phone is required.</small>
-                            <small *ngIf="myForm.get('homePhone')?.errors?.['pattern']" class="text-danger">Invalid home phone number format.</small>
+                            <small *ngIf="myForm.get('homePhone')?.errors?.['pattern']" class="text-danger">Invalid home number format.</small>
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -144,7 +146,7 @@
                           <input type="tel" id="mobilePhone" placeholder="Enter mobile phone here" class="form-control" formControlName="mobilePhone">
                           <div *ngIf="myForm.get('mobilePhone')?.touched && myForm.get('mobilePhone')?.invalid">
                             <small *ngIf="myForm.get('mobilePhone')?.errors?.['required']" class="text-danger">Mobile Phone is required.</small>
-                            <small *ngIf="myForm.get('mobilePhone')?.errors?.['pattern']" class="text-danger">Invalid phone number format.</small>
+                            <small *ngIf="myForm.get('mobilePhone')?.errors?.['pattern']" class="text-danger">Invalid Mobile number format.</small>
                           </div>
                         </div>
                       </div>
@@ -218,12 +220,13 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="password">Password</label>
-                            <textarea id="password" placeholder="Enter password here" class="form-control" formControlName="password"></textarea>
-                            <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
-                              <small *ngIf="myForm.get('language')?.errors?.['required']" class="text-danger">language is required.</small>
-                            </div>
+                          <label for="instruction">Instruction</label>
+                          <input type="text" id="instruction" placeholder="Enter instruction here" class="form-control" formControlName="instruction">
+                          <div *ngIf="myForm.get('instruction')?.touched && myForm.get('instruction')?.invalid">
+                            <small *ngIf="myForm.get('instruction')?.errors?.['required']" class="text-danger">instruction is required.</small>
                           </div>
+                        </div>
+                       
                       </div>
                   
                       <div class="row mt-4">
