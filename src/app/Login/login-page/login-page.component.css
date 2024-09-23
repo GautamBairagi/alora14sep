@@ -8,9 +8,9 @@
   
   /* Loading Message */
   .loading-message {
-    background-color: #f0f9ff;
-    color: #007bff;
-    border: 1px solid #007bff;
+    background-color: #81f66fee;
+    color: white;
+    border: 1px solid #22ff00;
   }
   
   /* Error Message */

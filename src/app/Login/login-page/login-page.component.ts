@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AllService } from 'src/app/Api/all.service';
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
   loginForm!:FormGroup;
   ck: boolean = false;
   constructor (
@@ -17,7 +15,6 @@ export class LoginPageComponent implements OnInit {
   private router:Router,
   private service:AllService,
 ){}
-
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -28,7 +25,6 @@ export class LoginPageComponent implements OnInit {
 loading: boolean = false;
 loginSuccess: boolean = false;
 loginError: boolean = false;
-
 addPatients() {
   if (this.loginForm.invalid) {
     this.ck = true;
@@ -39,7 +35,6 @@ addPatients() {
     this.loading = true;
     this.loginSuccess = false;
     this.loginError = false;
-
     this.service.superAdminLogin(this.loginForm.value).subscribe({
       next: (res) => {
         this.loading = false;
@@ -82,8 +77,6 @@ handleRoleBasedRedirection(res: any) {
   }
 }
 
-
-
 onChanges(data: string) {
   if (data === 'superadmin') { 
     this.loginForm.controls['email'].setValue('superadmin@gmail.com');
@@ -103,10 +96,8 @@ onChanges(data: string) {
       this.loginForm.controls['password'].setValue('patient');
       } 
 }
-
 showPassword: boolean = false;
 togglePasswordVisibility() {
   this.showPassword = !this.showPassword;
 }
-
 }

@@ -5,8 +5,8 @@
         
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
            <div *ngIf="showClockButtons">
-  <button *ngIf="!clockedIn" class="btn btn-primary" (click)="clockIn()">Clock In</button>
-  <button *ngIf="clockedIn" class="btn btn-primary" (click)="clockOut()">Clock Out</button>
+  <button  *ngIf="!clockedIn" class="btn btn-primary" (click)="clockIn()">  <i class="fas fa-solid fa-clock-rotate-left "></i> Clock In</button>
+  <button *ngIf="clockedIn" class="btn btn-primary" (click)="clockOut()">  <i class="fas fa-solid fa-clock-rotate-left "></i> Clock Out</button>
 </div>
               <ng-template #clockOutBlock>
                 <button class="btn btn-primary" (click)="clockIn()">Clock In</button>
