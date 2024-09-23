@@ -9,6 +9,7 @@ import { NurseDashboardComponent } from './pages/nurse-dashboard/nurse-dashboard
 import { NursePatientComponent } from './shared/nurse-patient/nurse-patient.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewPatientDetailsComponent } from './pages/view-patient-details/view-patient-details.component';
+import { NurseAloteViewComponent } from './pages/nurse-alote-view/nurse-alote-view.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ViewPatientDetailsComponent } from './pages/view-patient-details/view-p
     NurseHomeComponent,
     NurseDashboardComponent,
     NursePatientComponent,
-    ViewPatientDetailsComponent
+    ViewPatientDetailsComponent,
+    NurseAloteViewComponent
   ],
   imports: [
     CommonModule,

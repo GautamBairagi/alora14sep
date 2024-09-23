@@ -6,6 +6,7 @@ import { NurseHomeComponent } from './pages/nurse-home/nurse-home.component';
 import { NursePatientComponent } from './shared/nurse-patient/nurse-patient.component';
 import { ViewPatientComponent } from './pages/view-patient/view-patient.component';
 import { ViewPatientDetailsComponent } from './pages/view-patient-details/view-patient-details.component';
+import { NurseAloteViewComponent } from './pages/nurse-alote-view/nurse-alote-view.component';
 
 const routes: Routes = [
   { path: '', component: NurseComponent,
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'patient_details',
         component:ViewPatientDetailsComponent
+      },
+      {
+        path:'nurse_alote_view',
+        component:NurseAloteViewComponent
       }
     ]
    }
