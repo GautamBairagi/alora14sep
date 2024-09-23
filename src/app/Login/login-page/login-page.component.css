@@ -1,0 +1,29 @@
+.loading-message, .error-message, .success-message {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  /* Loading Message */
+  .loading-message {
+    background-color: #f0f9ff;
+    color: #007bff;
+    border: 1px solid #007bff;
+  }
+  
+  /* Error Message */
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  /* Success Message */
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  

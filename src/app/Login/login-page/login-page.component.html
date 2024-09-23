@@ -1,104 +1,3 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6  mx-auto mt-3">
-            <div class="card border-0 shadow rounded-3">
-                <div class="text-center">
-                    <img src="https://i.ibb.co/JFsnF04/5-6-1-1-removebg-preview.png" style="width: 250px;"
-                        class="card-img-top mt-3 mb-3" alt="...">
-                </div>
-                <div class="card-body">
-                    <form [formGroup]="loginForm">
-                        <div class="d-flex justify-content-start " style="color: rgb(103, 169, 228);">
-                            <i class="ace-icon fa fa-desktop blue px-2" style="font-size: 32px;"></i>
-                            <h4> Sign In</h4>
-                        </div>
-                        <hr>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1" style="color: #428BCA;"><i
-                                    class="fa-solid fa-user"></i></span>
-                            <input type="text" formControlName="email" class="form-control" placeholder="Username"
-                                aria-label="Username"
-                                [ngClass]="{'is-invalid': loginForm.controls['email'].errors && ck }"
-                                aria-describedby="basic-addon1">
-                        </div>
-                        <p class="text-danger" *ngIf="loginForm.controls['email'].errors && ck"> Enter Your Email
-                        </p>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1" style="color: #428BCA;"><i
-                                    class="fa-solid fa-lock"></i></span>
-                            <input type="text" formControlName="password" class="form-control" placeholder="Password"
-                                aria-label="Username"
-                                [ngClass]="{'is-invalid': loginForm.controls['password'].errors && ck }"
-                                aria-describedby="basic-addon1">
-                        </div>
-                        <p class="text-danger" *ngIf="loginForm.controls['password'].errors && ck"> Enter Your Password
-                        </p>
-                        <div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label text-secondary fw-bold" for="exampleCheck1">Show
-                                    Text</label>
-                            </div>
-                            <div>
-                                <a (click)="addPatients()"
-                                    class="btn btn-primary btn-square btn-block w-100 fw-bold mb-2"
-                                    style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">Login</a>
-                                <a href="" class="" style="color: #5ba7e9; font-size: 16px; font-weight: 600;">Forgot
-                                    your
-                                    Password?</a>
-                            </div>
-
-                            <div class="form-sociallink row">
-                                <div class="form-login col">
-                                    <button class="btn btn-primary" type="button" (click)="onChanges('superadmin')"
-                                        style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">
-                                        Super-Admin Login
-                                    </button>
-                                </div>
-
-                                <div class="form-login col">
-                                    <button class="btn btn-primary" type="button" (click)="onChanges('Doctor-Admin')"
-                                        style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">
-                                        Admin Login
-                                    </button>
-                                </div>
-
-                                <div class="form-login col">
-                                    <button class="btn btn-primary" type="button" (click)="onChanges('Nurse-Admin')"
-                                        style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">
-                                        Nurse Login
-                                    </button>
-                                </div>
-                                <div class="form-login col">
-                                    <button class="btn btn-primary" type="button" (click)="onChanges('Patient-Admin')"
-                                        style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;">
-                                        Patient Login
-                                    </button>
-                                </div>
-
-                            </div>
-
-                            <div>
-                                <div class="text-center pt-4 pb-3">
-                                    <button style="border-radius: 5px;
-                                border: 2px solid #D2E600;
-                                background-color: #D8F0B2;
-                                color: #428BCA;
-                                font-size: 1.6em;
-                                padding: 3px 15px;
-                                text-decoration: none;">Refer an Agency</button> <br>
-                                    <label class="fw-bold mt-2" style="color: #428BCA;">...and get up to
-                                        $2,500!</label>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 
 <div class="container">
     <div class="row">
@@ -110,7 +9,21 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        
+                        <div *ngIf="loading" class="loading-message">
+                            Loading, please wait...
+                          </div>
+                          
+                          <div *ngIf="!loading && ck && loginForm.invalid" class="error-message">
+                            Please fill out the required fields.
+                          </div>
+                          
+                          <div *ngIf="!loading && loginSuccess" class="success-message">
+                            Login successful!
+                          </div>
+                          
+                          <div *ngIf="!loading && loginError" class="error-message">
+                            An error occurred during login. Please try again.
+                          </div>
                     </div>
                     <form [formGroup]="loginForm">
                         <div class="d-flex justify-content-start " style="color: rgb(103, 169, 228);">
@@ -153,21 +66,13 @@
                                 class="btn btn-primary btn-square btn-block w-100 fw-bold mb-2"
                                 style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;" 
                                 [disabled]="loading">
-                                <span *ngIf="!loading">Login</span>
-                                <span *ngIf="loading">
-                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                    Loading...
-                                </span>
-                            </button>
+                            <span *ngIf="!loading">Login</span>
+                            <span *ngIf="loading">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </span>
+                        </button>
                             
-                                <!-- <a (click)="addPatients()"
-                                    class="btn btn-primary btn-square btn-block w-100 fw-bold mb-2"
-                                    style="background-color: #428BCA !important; font-size: 18px; border: none; border-color: #428BCA;" [disabled]="loading">
-                                    <span *ngIf="!loading">Login</span>
-                                    <span *ngIf="loading">
-                                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                      Loading...
-                                    </span></a> -->
                                 <a href="" class="" style="color: #5ba7e9; font-size: 16px; font-weight: 600;">Forgot
                                     your
                                     Password?</a>
