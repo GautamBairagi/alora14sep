@@ -26,49 +26,62 @@ export class LoginPageComponent implements OnInit {
 }
 
 loading: boolean = false;
+loginSuccess: boolean = false;
+loginError: boolean = false;
+
 addPatients() {
   if (this.loginForm.invalid) {
     this.ck = true;
-    return
-} 
-else{
-  console.log("Pataient data",this.loginForm.value)
-  this.loading = true;
-  this.service.superAdminLogin(this.loginForm.value).subscribe({
-    next: (res)=>{
-      if (res.role === 'superadmin' ){
-        localStorage.setItem('Superadmin_token',res.token)
-        localStorage.setItem('superadmin_name',res.name)
-        this.router.navigate(["/superAdmin/home"])
-        // this.service.showSuccess('Super Admin Login','Successfully !');
+    return;
+  } 
+  else {
+    console.log("Patient data", this.loginForm.value);
+    this.loading = true;
+    this.loginSuccess = false;
+    this.loginError = false;
+
+    this.service.superAdminLogin(this.loginForm.value).subscribe({
+      next: (res) => {
+        this.loading = false;
+        if (res.role === 'superadmin' || res.role === 'doctor' || res.role === 'nurse' || res.role === 'patient') {
+          this.handleRoleBasedRedirection(res);
+          this.loginSuccess = true;  // Login success message
+        } else {
+          this.loginError = true;
+        }
+      },
+      error: (err) => {
+        console.log(err);
+        this.loading = false;
+        this.loginError = true;  // Error message
       }
-      else if (res.role === 'doctor' ) {
-        localStorage.setItem('homecare_token',res.token) 
-        localStorage.setItem('id',res.id)
-        localStorage.setItem('homecare_name',res.name)
-        this.router.navigate(["/Admin/admin_home"])
-        // this.service.showSuccess('Super Admin Login','Successfully !');
-      }
-       else if (res.role === 'nurse' ) {
-        localStorage.setItem('nurse_token',res.token) 
-        localStorage.setItem('id',res.id)
-        localStorage.setItem('nurse_name',res.name)
-        localStorage.setItem('doctorId',res.doctorId)
-        this.router.navigate(["/nurse/nurse_home"])
-      }
-       else if (res.role === 'patient' ) {
-        localStorage.setItem('patient_token',res.token)
-        localStorage.setItem('patient_name',res.firstname)
-        this.router.navigate(["/patient/patient_home"])
-        // this.service.showSuccess('patient  Login','Successfully !');
-      }
-      console.log("P Data",res)
-      this.loading = false;
-    },
-    error: (err)=>{console.log(err),this.loading = false;}
-    })
+    });
+  }
 }
+
+handleRoleBasedRedirection(res: any) {
+  if (res.role === 'superadmin') {
+    localStorage.setItem('Superadmin_token', res.token);
+    localStorage.setItem('superadmin_name', res.name);
+    this.router.navigate(["/superAdmin/home"]);
+  } else if (res.role === 'doctor') {
+    localStorage.setItem('homecare_token', res.token);
+    localStorage.setItem('id', res.id);
+    localStorage.setItem('homecare_name', res.name);
+    this.router.navigate(["/Admin/admin_home"]);
+  } else if (res.role === 'nurse') {
+    localStorage.setItem('nurse_token', res.token);
+    localStorage.setItem('id', res.id);
+    localStorage.setItem('nurse_name', res.name);
+    localStorage.setItem('doctorId', res.doctorId);
+    this.router.navigate(["/nurse/nurse_home"]);
+  } else if (res.role === 'patient') {
+    localStorage.setItem('patient_token', res.token);
+    localStorage.setItem('patient_name', res.firstname);
+    this.router.navigate(["/patient/patient_home"]);
+  }
 }
+
 
 
 onChanges(data: string) {
