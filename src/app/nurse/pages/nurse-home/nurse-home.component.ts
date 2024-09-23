@@ -37,6 +37,7 @@ export class NurseHomeComponent implements OnInit {
   clockInTime: string | null = null; // Store clock-in time in ISO string format
   clockOutTime: string | null = null; // Store clock-out time in ISO string format
   differenceTime: string | null = null; // Store difference between clock-in and clock-out as string
+  showClockButtons = true; // To control button visibility
 
 
   // Retrieve clock-in/clock-out status and clock-in time from local storage
@@ -78,7 +79,14 @@ export class NurseHomeComponent implements OnInit {
     this.clockedIn = false;
     localStorage.setItem('clockedIn', 'false'); // Store clock-out status
     localStorage.removeItem('clockInTime'); // Clear clock-in time from localStorage
+    this.showClockButtons = false;
     this.showTemporaryMessage('Clocked out successfully!');
+  }
+
+  isSameDay(date1: Date, date2: Date): boolean {
+    return date1.getFullYear() === date2.getFullYear() &&
+           date1.getMonth() === date2.getMonth() &&
+           date1.getDate() === date2.getDate();
   }
 
   // Convert milliseconds to hh:mm:ss string format
