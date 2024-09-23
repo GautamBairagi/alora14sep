@@ -54,11 +54,11 @@ export class PatientNurseAlotedComponent implements OnInit {
   getalotss(){
     this.api.getallalotnursesForAdmin().subscribe((res:any)=>{
       this.allalotsssCount = res.data;
-      this.totalPages = Math.ceil(this.nursesCount.length / this.itemsPerPage);
+      this.totalPages = Math.ceil(this.allalotsssCount.length / this.itemsPerPage);
       // this.setPage(1);
 
       this.rehan =this.allalotsssCount.filter((item:any)=>item.patientName===this.nursename)
-      console.log('nurse count', this.nursesCount)
+      console.log('nurse count', this.allalotsssCount)
       console.log('rehan ', this.rehan)
       
     })
@@ -68,7 +68,7 @@ export class PatientNurseAlotedComponent implements OnInit {
     this.currentPage = page;
     const startIndex = (page - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.paginatedNurses = this.nursesCount.slice(startIndex, endIndex);
+    this.paginatedNurses = this.allalotsssCount.slice(startIndex, endIndex);
   }
 
   nextPage() {

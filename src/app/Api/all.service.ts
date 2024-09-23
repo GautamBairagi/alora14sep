@@ -38,8 +38,13 @@ export class AllService extends HttpService {
    nursesForSuperAdmin(){
     return this.get(superAdminEndPoints.getnurses)
    }
+
+  //  adminId:any;
+
+   adminId = localStorage.getItem('id');
+
    nursesForAdmin(){
-    return this.get(superAdminEndPoints.getNursesForAdmin)
+    return this.get(superAdminEndPoints.getNursesForAdmin + this.adminId )
    }
 
    getallalotnursesForAdmin(){
