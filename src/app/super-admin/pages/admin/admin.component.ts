@@ -36,7 +36,27 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  
+  id:any;
+  adminByIdData:any=[];
+adminById(data: any) {
+  this.id = data;
+  this.api.adminsById(data).subscribe((res: any) => {
+    this.adminByIdData = res.data;
+  })
+}
+
+adminDelete(itemDlt: any): void {
+  this.api.deletedoctorsForSuperAdmin(itemDlt.id).subscribe(
+    () => {
+      window.location.reload()
+    },
+    (error) => {
+      console.error('Error deleting dispatched', error);
+    }
+  );
+}
+
+
 
   setPage(page: number) {
     this.currentPage = page;

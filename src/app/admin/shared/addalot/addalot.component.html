@@ -60,6 +60,123 @@
                           </div>
                         </div>
                       </div>
+                      
+                      
+                      <div class="row mt-4">
+                        
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="">Nursing service charge</label>
+                          <input type="text" formControlName="nursingServiceCharge" class="form-control" placeholder="Enter nursing service charge">
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="">Medication charge</label>
+                          <input type="text" formControlName="medicationCharge" class="form-control" placeholder="Enter medication charge">
+                        </div>
+                        
+                      </div>
+
+                      
+                      <div class="row mt-4">
+                        
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                          <label for="">Additional service</label>
+                          <select formControlName="additionalService" class="form-select"
+                          id="nurseName">
+                          <option value="">select</option>
+                          <option *ngFor="let serviceName of servicesCount" [value]="serviceName.name"><span>{{serviceName.name}}</span> </option>
+                      </select>
+                        </div>
+                        
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 mt-4">
+                          <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+                        
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add service</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="container">
+          
+          <div class="row">
+            
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <form [formGroup]="addServicForm" (ngSubmit)="addService()">
+         
+                <div class="container">
+                 
+                 <div class="row">
+                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m-2">
+                     <label for="">Service name</label>
+                     <input type="text" formControlName="name" id="" class="form-control" placeholder="Enter service name">
+                   </div>
+                   
+                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                   </div>
+                   
+                 </div>
+                 
+                </div>
+                
+               </form>
+            </div>
+
+            
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Sr no</th>
+                      <th>Service Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let ss of servicesCount;let i  = index">
+                      <td> {{ i+1 }} </td>
+                      <td> {{ ss.name }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+                        </div>
+
+                        
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="">Additional service charge</label>
+                          <input type="text" formControlName="additionalServiceCharge" class="form-control" placeholder="Enter additional service charge">
+                        </div>
+                        
+                        
+                        
+                      </div>
+                      
+                      
+                      
                       <div class="row mt-4">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                           <button type="submit" class="btn btn-primary w-25" [disabled]="myForm.invalid">Submit</button>
