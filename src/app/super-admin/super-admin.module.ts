@@ -10,7 +10,7 @@ import { PatientsComponent } from './pages/patients/patients.component';
 import { AddAdminComponent } from './shared/add-admin/add-admin.component';
 import { AddNursesComponent } from './shared/add-nurses/add-nurses.component';
 import { AddPatientsComponent } from './shared/add-patients/add-patients.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 
 
@@ -31,7 +31,7 @@ import { HomeComponent } from './pages/home/home.component';
     CommonModule,
     SuperAdminRoutingModule,
     ReactiveFormsModule,
-   
+   FormsModule
   ]
 })
 export class SuperAdminModule { }

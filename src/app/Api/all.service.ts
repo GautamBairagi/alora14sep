@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../Http/httpServices';
 import { superAdminEndPoints } from '../Urls/ApiUrl';
@@ -37,9 +37,35 @@ export class AllService extends HttpService {
    ststusdoctorsForSuperAdmin(id:any, data:any){
     return this.patch(superAdminEndPoints.approveDoctor + id , data)
    }
-   postDoctors(data:any){
-    return this.post(superAdminEndPoints.doctorsAdd, data)
-   }
+  //  postDoctors(data:any){
+  //   return this.post(superAdminEndPoints.doctorsAdd, data)
+  //  }
+
+
+
+//    postDoctors(data: any) {
+//     const headers = new HttpHeaders({
+//         'Content-Type': 'multipart/mixed; boundary=gc0p4Jq0M2Yt08jU534c0p' // Custom boundary
+//     });
+
+//     return this.http.post(superAdminEndPoints.doctorsAdd, data, { headers });
+// }
+
+postDoctors(data: any) {
+  const headers = new HttpHeaders({
+      // 'Content-Type': 'multipart/form-data'  // Correct content type for file upload
+
+      // 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+
+  });
+
+  return this.http.post(superAdminEndPoints.doctorsAdd, data, { headers });
+}
+
+
+
+
+
    nursesForSuperAdmin(){
     return this.get(superAdminEndPoints.getnurses)
    }
@@ -91,7 +117,7 @@ export class AllService extends HttpService {
    }
 
    updatePatientById(id: any, updatedData: any) {
-    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/patient/${id}`, updatedData);
+    return this.http.put(`https://alora-plus.vercel.app/api/v1/patient/${id}`, updatedData);
   }
 
    deletepatient(id:any){
@@ -106,23 +132,45 @@ export class AllService extends HttpService {
    allotedById(id:any){
     return this.get(superAdminEndPoints.allotedByIdById + id )
    }
-
+   
 
    updateNurseById(id: any, updatedData: any) {
-    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/nurse/${id}`, updatedData);
+    return this.http.put(`https://alora-plus.vercel.app/api/v1/nurse/${id}`, updatedData);
   }
 
   allotupdate(id: any, updatedData: any) {
-    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/allot/${id}`, updatedData);
+    return this.http.put(`https://alora-plus.vercel.app/api/v1/allot/${id}`, updatedData);
   }
+
+
+  adminupdate(id: any, updatedData: any) {
+    return this.http.put(`https://alora-plus.vercel.app/api/v1/doctor/${id}`, updatedData);
+  }
+
+
 
    deleteNurse(id:any){
     return this.delete(superAdminEndPoints.nursesById + id )
    }
 
-   addpatientsForSuperAdmin(data :any){
-    return this.post(superAdminEndPoints.addpatients, data)
-   }
+  //  addpatientsForSuperAdmin(data :any){
+  //   return this.post(superAdminEndPoints.addpatients, data)
+  //  }
+
+
+
+   addpatientsForSuperAdmin(data: any) {
+    const headers = new HttpHeaders({
+        // 'Content-Type': 'multipart/form-data'  // Correct content type for file upload
+  
+        // 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+  
+    });
+  
+    return this.http.post(superAdminEndPoints.addpatients, data, { headers });
+  }
+
+
 
    deletealot(id:any){
     return this.delete(superAdminEndPoints.allotById + id )
