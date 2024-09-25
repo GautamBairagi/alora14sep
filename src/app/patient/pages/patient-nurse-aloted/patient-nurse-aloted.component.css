@@ -1,0 +1,31 @@
+.invoice {
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .invoice h2 {
+    text-align: center;
+  }
+  
+  .patient-details {
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .total-section {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .total-section p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

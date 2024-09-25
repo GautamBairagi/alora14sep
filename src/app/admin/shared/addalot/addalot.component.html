@@ -10,37 +10,19 @@
                       <div class="row mt-2">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                           <label for="name">Patient Name</label>
-
-                          <!-- <input type="text" id="patientName" placeholder="Enter name here" class="form-control" formControlName="patientName"> -->
-                          
-                          
                           <select formControlName="patientName" class="form-select"
                               id="patientName">
                               <option value="">select</option>
                               <option *ngFor="let patientNames of patientsCount "><span>{{patientNames.firstname}}</span> </option>
                           </select>
-
-
-
-                          <!-- <div *ngIf="myForm.get('patientName')?.touched && myForm.get('patientName')?.invalid">
-                            <small *ngIf="myForm.get('patientName')?.errors?.['required']" class="text-danger">Name is required.</small>
-                          </div> -->
-
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                           <label for="email">Nurse Name</label>
-                          <!-- <input type="email" id="nurseName" placeholder="Enter email here" class="form-control" formControlName="nurseName"> -->
-                          
-                          
                           <select formControlName="nurseName" class="form-select"
                               id="nurseName">
                               <option value="">select</option>
                               <option *ngFor="let nurseNames of nursesCount "><span>{{nurseNames.name}}</span> </option>
                           </select>
-                          
-                          <!-- <div *ngIf="myForm.get('nurseName')?.touched && myForm.get('nurseName')?.invalid">
-                            <small *ngIf="myForm.get('nurseName')?.errors?.['required']" class="text-danger">Email is required.</small>
-                          </div> -->
                         </div>
                       </div>
                   
@@ -175,6 +157,12 @@
                         
                       </div>
                       
+                      <div class="row mt-4">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                          <label for="totalCharge">Total Charge</label>
+                          <input type="text" id="totalCharge" formControlName="totalCharge" class="form-control" placeholder="Total charge" readonly  >
+                        </div>
+                      </div>
                       
                       
                       <div class="row mt-4">

@@ -5,13 +5,10 @@
     <div class="container">
         
         <div class="row mt-3 ">
-            <h2 style="background-color: #438eb9; color: white;">View Nurse Alloted</h2>
+            <h2 style="background-color: #438eb9; color: white;">My Care Giver Details</h2>
             <hr>
             
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
-              <button type="button" routerLinkActive="router-link-active"  class="btn btn-primary">Add Allot</button>
-            </div>
-            
+        
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
                 
                 <div class="table-responsive">
@@ -19,97 +16,104 @@
                       <thead>
                         <tr>
                           <th>Sr No</th>
-                          <!-- <th>Patient Name</th> -->
                           <th>Nurse Name</th>
                           <th>From Date</th>
                           <th>To Date</th>
-                          <!-- <th>Action</th> -->
+                          <th>Nursing Service Charge</th>
+                          <th>Medication Charge</th>
+                          <th>Additional Service</th>
+                          <th>Additional Service Charge</th>
+                          <th>Total Charge</th>
+                          <th>Invoice</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let admin of rehan; let i = index">
-                          <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td> 
-                          <!-- <td>{{ admin.patientName }}</td> -->
+                          <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
                           <td>{{ admin.nurseName }}</td>
                           <td>{{ admin.formDate }}</td>
                           <td>{{ admin.toDate }}</td>
-                          <td>  
-                            <!-- <button (click)="allotedById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button> -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Allot</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form #userForm="ngForm" (ngSubmit)="updateNurse()">
-                                      <div class="container mt-2 mb-3">
-                                        <div class="row">
-                                          <!-- <div class="col-lg-6">
-                                            <label for="name">Patient Name:</label>
-                                            <input type="text" class="form-control" id="name" [(ngModel)]="nurseByIdData.patientName" name="name" required />
-                                          </div> -->
-                                          <div class="col-lg-6">
-                                            <label for="mobileNumber">Nurse Name</label>
-                                            <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="nurseByIdData.nurseName" name="mobileNumber" required />
-                                          </div> 
-                                        </div>
-                            
-                                        <div class="row">
-                                          <div class="col-lg-6">
-                                            <label for="formDate">From Date</label>
-                                            <input type="date" class="form-control" id="formDate" [(ngModel)]="nurseByIdData.formDate" name="formDate" required />
-                                          </div>
-                                        </div>
+                          <td>{{ admin.nursingServiceCharge }}</td>
+                          <td>{{ admin.medicationCharge }}</td>
+                          <td>{{ admin.additionalService }}</td>
+                          <td>{{ admin.additionalServiceCharge }}</td>
+                          <td>{{ admin.totalCharge }}</td>
+                          <td>
+<!-- Modal Trigger Button (opens modal) -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#invoiceModal" (click)="setAdminData(admin)">
+  View Invoice
+</button>
 
-                                        <div class="row"></div>
-                                          <div class="col-lg-6">
-                                            <label for="toDate">To Date</label>
-                                            <input type="date" class="form-control" id="toDate" [(ngModel)]="nurseByIdData.toDate" name="toDate" required />
-                                          </div>
-                                        </div>
-                                        
-                                      
-                                      
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                      </div>
-                                      
-                                      
-                                    </form>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- <button (click)="allotedById(admin.id)" class="btn btn-danger bg-transparent m-1" style="color: red;" data-bs-toggle="modal" data-bs-target="#deleteModal" ><i class="fa-solid fa-trash"></i></button>
-                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  
-                                  <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Allot</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    Are you sure want to delete {{ nurseByIdData.name }} ?
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" (click)="allotsDeleted(nurseByIdData)" class="btn btn-primary">Save changes</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->
+<!-- Modal Structure -->
+<div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="invoiceModalLabel">Billing Invoice</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="invoice">
+          <h2>Invoice</h2>
+
+          <!-- Patient Details -->
+          <div class="patient-details">
+            <p><strong>Patient Name:</strong> {{ admin?.patientName }}</p>
+            <p><strong>Date:</strong> {{ currentDate }}</p>
+          </div>
+
+          <!-- Table for Charges -->
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Nurse Name</th>
+                  <th>From Date</th>
+                  <th>To Date</th>
+                  <th>Nursing Service Charge</th>
+                  <th>Medication Charge</th>
+                  <th>Additional Service</th>
+                  <th>Additional Service Charge</th>
+                  <th>Total Charge</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let admin of rehan; let i = index">
+                  <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                  <td>{{ admin.nurseName }}</td>
+                  <td>{{ admin.formDate }}</td>
+                  <td>{{ admin.toDate }}</td>
+                  <td>{{ admin.nursingServiceCharge | currency }}</td>
+                  <td>{{ admin.medicationCharge | currency }}</td>
+                  <td>{{ admin.additionalService }}</td>
+                  <td>{{ admin.additionalServiceCharge | currency }}</td>
+                  <td>{{ admin.totalCharge | currency }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Total Section -->
+          <div class="total-section">
+            <p><strong>Total Amount:</strong> {{ calculateTotalAmount() | currency }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
                           </td>
                         </tr>
-
-                       
-                          
-
-
                   
                       </tbody>
                     </table>

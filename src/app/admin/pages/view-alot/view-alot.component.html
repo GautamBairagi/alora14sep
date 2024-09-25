@@ -21,6 +21,10 @@
                           <th>Nurse Name</th>
                           <th>From Date</th>
                           <th>To Date</th>
+                          <th>Nursing Service Charge</th>
+                          <th>Medication Charge</th>
+                          <th>Additional Service Charge</th>
+                          <th>Total Charge</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -31,6 +35,10 @@
                           <td>{{ admin.nurseName }}</td>
                           <td>{{ admin.formDate }}</td>
                           <td>{{ admin.toDate }}</td>
+                          <td>{{ admin.nursingServiceCharge }}</td>
+                          <td>{{ admin.medicationCharge }}</td>
+                          <td>{{ admin.additionalServiceCharge }}</td>
+                          <td>{{ admin.totalCharge }}</td>
                           <td>  
                             <button (click)="allotedById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button>
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

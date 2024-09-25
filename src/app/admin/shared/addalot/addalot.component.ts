@@ -40,12 +40,32 @@ export class AddalotComponent implements OnInit {
       additionalService: ['',  Validators.required],
       additionalServiceCharge: ['',  Validators.required],
       doctorId:[this.userId],
+      totalCharge: [''] 
     });
 
     this.addServicForm = this.fb.group({
       name:['']
     })
+
+    this.calculateTotal();
   }
+
+  calculateTotal() {
+    this.myForm.valueChanges.subscribe(values => {
+      const nursingCharge = +values.nursingServiceCharge || 0;
+      const medicationCharge = +values.medicationCharge || 0;
+      const additionalCharge = +values.additionalServiceCharge || 0;
+  
+      const total = nursingCharge + medicationCharge + additionalCharge;
+  
+      // Convert total to a string before updating the form control
+      const totalAsString = total.toString();
+  
+      // Update the total field as a string
+      this.myForm.patchValue({ totalCharge: totalAsString }, { emitEvent: false });
+    });
+  }
+  
 
   onSubmit(): void {
     if (this.myForm.valid) {

@@ -46,10 +46,10 @@ export class AllService extends HttpService {
 
   //  adminId:any;
 
-   adminId = localStorage.getItem('id');
 
    nursesForAdmin(){
-    return this.get(superAdminEndPoints.getNursesForAdmin + this.adminId )
+     const adminId = localStorage.getItem('id');
+    return this.get(superAdminEndPoints.getNursesForAdmin + adminId )
    }
 
    getallalotnursesForAdmin(){
@@ -67,11 +67,13 @@ export class AllService extends HttpService {
    }
 
    patientsForAdmin(){
-    return this.get(superAdminEndPoints.getPatientsForAdmin)
+    const adminId = localStorage.getItem('id');
+    return this.get(superAdminEndPoints.getPatientsForAdmin + adminId )
    }
 
    patientsForNurse(){
-    return this.get(superAdminEndPoints.getPatientsForNurse)
+    const adminId = localStorage.getItem('id');
+    return this.get(superAdminEndPoints.getPatientsForNurse + adminId )
    }
 
    
@@ -137,7 +139,8 @@ export class AllService extends HttpService {
   }
 
   clockStatus(){
-    return this.get(superAdminEndPoints.clockStatusForAdmin)
+    const adminId = localStorage.getItem('id');
+    return this.get(superAdminEndPoints.clockStatusForAdmin + adminId )
    }
    
    clockStatusPost(payload: any){
