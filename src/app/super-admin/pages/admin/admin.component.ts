@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { AllService } from 'src/app/Api/all.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +9,25 @@ import { AllService } from 'src/app/Api/all.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  constructor(private api:AllService){}
+
+  updateForm!:FormGroup;
+
+  constructor(private api:AllService, private fb :FormBuilder,
+   
+  ){
+
+    this.updateForm = this.fb.group({
+      name: [''],
+      email: [''],
+      password: [''],
+      mobileNumber: [''],
+      fullAddress: [''],
+      image: [''],
+      license: [''],
+
+    })
+
+  }
 
   doctorsCount: any[] = [];
   paginatedDoctors: any[] = [];
@@ -31,6 +51,7 @@ export class AdminComponent implements OnInit {
   deleteDoctors(id:any) {
     this.api.deletedoctorsForSuperAdmin(id).subscribe((res: any) => {
       this.doctorsCount = res.data;
+      window.location.reload()
       this.totalPages = Math.ceil(this.doctorsCount.length / this.itemsPerPage);
       this.setPage(1); // Initialize with the first page
     });
@@ -45,6 +66,29 @@ adminById(data: any) {
   })
 }
 
+downloadImage(imageUrl: string) {
+  // Fetch the image as a Blob
+  fetch(imageUrl)
+    .then(response => response.blob())
+    .then(blob => {
+      // Create a temporary URL for the Blob
+      const url = window.URL.createObjectURL(blob);
+      
+      // Create an anchor element and trigger the download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'license-image.jpg'; // Set the file name here
+      document.body.appendChild(a);
+      a.click();
+      
+      // Clean up: remove the anchor element and revoke the Blob URL
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    })
+    .catch(error => console.error('Download failed', error));
+}
+
+
 adminDelete(itemDlt: any): void {
   this.api.deletedoctorsForSuperAdmin(itemDlt.id).subscribe(
     () => {
@@ -54,6 +98,19 @@ adminDelete(itemDlt: any): void {
       console.error('Error deleting dispatched', error);
     }
   );
+}
+
+
+
+
+updateNurse() {
+  this.api.adminupdate(this.id, this.adminByIdData).subscribe((res: any) => {
+    console.log('Nurse updated successfully', res);
+    window.location.reload()
+  }, (error) => {
+    console.error('Error updating user', error);
+    // Handle error
+  });
 }
 
 

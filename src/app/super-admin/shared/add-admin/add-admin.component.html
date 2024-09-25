@@ -1,13 +1,13 @@
 <section>
-    
-    <div class="container">
-        
-        <div class="row">
-            
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
-                <h2>Add Admin </h2>
-                <hr>
-                <form [formGroup]="myForm" >
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
+        <h2>Add Admin </h2>
+        <hr>
+        <!-- <form [formGroup]="myForm" >
                     <div class="container">
                       <div class="row mt-2">
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -86,8 +86,118 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+                  </form> -->
+
+
+        <form [formGroup]="addDoctorform">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First
+                    Name</label>
+                  <input type="text" id="firstName" formControlName="name" class="form-control"
+                    [ngClass]="{'is-invalid': addDoctorform.controls['name'].errors && ckDep }"
+                    placeholder="First Name" />
+                  <p class="text-danger" *ngIf="addDoctorform.controls['name'].errors && ckDep"> Enter your firstName
+                  </p>
+
+                </div>
+              </div>
             </div>
-        </div>
+
+            <div class="row">
+
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="middleName" class="form-label">email
+                    <span>(Optional)</span></label>
+                  <input type="text" id="middleName" class="form-control" placeholder="email " formControlName="email"
+                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['email'].errors && ckDep }" />
+                  <p class="text-danger" *ngIf="addDoctorform.controls['password'].errors && ckDep"> Enter your email
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="lastName" class="form-label">password
+                  </label>
+                  <input type="text" id="lastName" class="form-control" placeholder="password "
+                    formControlName="password" class="form-control"
+                    [ngClass]="{'is-invalid': addDoctorform.controls['password'].errors && ckDep }" />
+                  <p class="text-danger" *ngIf="addDoctorform.controls['password'].errors && ckDep"> Enter your password
+                  </p>
+
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="disabledTextInput" class="form-label">mobileNumber</label>
+ 
+                  <input type="tel" id="disabledTextInput" formControlName="mobileNumber" placeholder="mobileNumber"
+                    formControlName="mobileNumber" class="form-control"
+                    [ngClass]="{'is-invalid': addDoctorform.controls['mobileNumber'].errors && ckDep }" />
+                  <p class="text-danger" *ngIf="addDoctorform.controls['mobileNumber'].errors && ckDep"> Enter your
+                    mobileNumber</p>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="fullAddress" class="form-label">fullAddress<span>(Optional)</span> </label>
+                  <input type="text" id="expreience" class="form-control" placeholder="fullAddress"
+                    formControlName="fullAddress" class="form-control"
+                    [ngClass]="{'is-invalid': addDoctorform.controls['fullAddress'].errors && ckDep }" />
+                    <p class="text-danger" *ngIf="addDoctorform.controls['fullAddress'].errors && ckDep">Enter your fullAddress</p>
+
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="">image <span>(Optional)</span></label>
+                  <input class="form-control" type="file" formControlName="image" class="form-control"
+                    (change)="Onupload($event)"
+                    [ngClass]="{'is-invalid': addDoctorform.controls['image'].errors && ckDep }">
+                  <p class="text-danger" *ngIf="addDoctorform.controls['mobileNumber'].errors && ckDep"> Enter your
+                    image</p>
+
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="">license </label>
+                  <input class="form-control" type="file" formControlName="license" (change)="Onuploadquali($event)"
+                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['license'].errors && ckDep }">
+                  <p class="text-danger" *ngIf="addDoctorform.controls['license'].errors && ckDep"> Enter license</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="form-login">
+                <button class="btn btn-login" type="submit" (click)="addDoctor()">
+                  Save
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

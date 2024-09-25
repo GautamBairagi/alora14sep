@@ -155,11 +155,26 @@
                       </div>
                   
                       <div class="row mt-4">
+                          <!-- <div class="col-sm-6">
+                            <div class="form-group">
+                              <label for="">image <span>(Optional)</span></label>
+                              <input class="form-control" type="file" formControlName="image" class="form-control"
+                                (change)="Onupload($event)"
+                                [ngClass]="{'is-invalid': addDoctorform.controls['image'].errors && ckDep }">
+                              <p class="text-danger" *ngIf="addDoctorform.controls['mobileNumber'].errors && ckDep"> Enter your image</p>
+                            </div>
+                          </div> -->
+
                         <div class="col-md-6">
                           <label for="image">Image</label>
-                          <input type="file"  placeholder="Enter image here" class="form-control" formControlName="image" multiple="multiple" accept="image/*,application/pdf" (change)="onSelectFile($event)">
-                         
+                          <input (change)="Onupload($event)" type="file" id="image" placeholder="Enter image here" class="form-control" formControlName="image"  >
+                          <div *ngIf="myForm.get('image')?.touched && myForm.get('image')?.invalid">
+                            <small *ngIf="myForm.get('image')?.errors?.['required']" class="text-danger">image is required.</small>
+                          </div>
                         </div>
+
+
+
                         <div class="col-md-6">
                           <label for="comments">Comments</label>
                           <textarea placeholder="Enter comments here" class="form-control" formControlName="comments"></textarea>
