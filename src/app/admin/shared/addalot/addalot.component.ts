@@ -11,8 +11,10 @@ import { AllService } from 'src/app/Api/all.service';
 export class AddalotComponent implements OnInit {
 
   myForm!: FormGroup;
+  addServicForm!: FormGroup;
   nursesCount:any=[];
   patientsCount:any=[];
+  servicesCount:any=[];
 
   constructor(private fb: FormBuilder,
     private service:AllService,
@@ -23,6 +25,7 @@ export class AddalotComponent implements OnInit {
   ngOnInit(): void {
     this.getNurses();
     this.getPatients();
+    this.getServices();
     const userIdString = localStorage.getItem('id');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
     
@@ -32,8 +35,16 @@ export class AddalotComponent implements OnInit {
       nurseName: ['', Validators.required],
       formDate: ['', Validators.required],
       toDate: ['',  Validators.required],
+      nursingServiceCharge: ['',  Validators.required],
+      medicationCharge: ['',  Validators.required],
+      additionalService: ['',  Validators.required],
+      additionalServiceCharge: ['',  Validators.required],
       doctorId:[this.userId],
     });
+
+    this.addServicForm = this.fb.group({
+      name:['']
+    })
   }
 
   onSubmit(): void {
@@ -46,11 +57,28 @@ export class AddalotComponent implements OnInit {
     }
   }
 
+  addService(): void {
+    if (this.addServicForm.valid) {
+      console.log(this.addServicForm.value);
+      this.service.additionalServicePost(this.addServicForm.value).subscribe((res:any)=>{
+        console.log('service added',res)
+        window.location.reload()
+       });
+    }
+  }
+
 
   getNurses(){
     this.service.nursesForAdmin().subscribe((res:any)=>{
       this.nursesCount = res.data;
       console.log('home care nurse', this.nursesCount)
+    })
+  }
+
+  getServices(){
+    this.service.additionalServiceGet().subscribe((res:any)=>{
+      this.servicesCount = res.data;
+      console.log('services data', this.servicesCount)
     })
   }
 

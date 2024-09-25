@@ -29,6 +29,11 @@ export class AllService extends HttpService {
    deletedoctorsForSuperAdmin(id:any){
     return this.delete(superAdminEndPoints.deletedoctor + id)
    }
+
+   adminsById(id:any){
+    return this.get(superAdminEndPoints.deletedoctor + id )
+   }
+
    ststusdoctorsForSuperAdmin(id:any, data:any){
     return this.patch(superAdminEndPoints.approveDoctor + id , data)
    }
@@ -38,8 +43,13 @@ export class AllService extends HttpService {
    nursesForSuperAdmin(){
     return this.get(superAdminEndPoints.getnurses)
    }
+
+  //  adminId:any;
+
+   adminId = localStorage.getItem('id');
+
    nursesForAdmin(){
-    return this.get(superAdminEndPoints.getNursesForAdmin)
+    return this.get(superAdminEndPoints.getNursesForAdmin + this.adminId )
    }
 
    getallalotnursesForAdmin(){
@@ -81,7 +91,7 @@ export class AllService extends HttpService {
    }
 
    updatePatientById(id: any, updatedData: any) {
-    return this.http.put(`https://alora-plus.vercel.app/api/v1/patient/${id}`, updatedData);
+    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/patient/${id}`, updatedData);
   }
 
    deletepatient(id:any){
@@ -99,11 +109,11 @@ export class AllService extends HttpService {
 
 
    updateNurseById(id: any, updatedData: any) {
-    return this.http.put(`https://alora-plus.vercel.app/api/v1/nurse/${id}`, updatedData);
+    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/nurse/${id}`, updatedData);
   }
 
   allotupdate(id: any, updatedData: any) {
-    return this.http.put(`https://alora-plus.vercel.app/api/v1/allot/${id}`, updatedData);
+    return this.http.put(`https://alora-yst7j.ondigitalocean.app/api/v1/allot/${id}`, updatedData);
   }
 
    deleteNurse(id:any){
@@ -132,6 +142,14 @@ export class AllService extends HttpService {
    
    clockStatusPost(payload: any){
     return this.post(superAdminEndPoints.clockStatus,payload)
+   }
+
+   additionalServicePost(data: any){
+    return this.post(superAdminEndPoints.addtionalservice,data)
+   }
+
+   additionalServiceGet(){
+    return this.get(superAdminEndPoints.addtionalserviceGet)
    }
 
 

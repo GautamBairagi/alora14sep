@@ -54,9 +54,9 @@ export class ClockStatusComponent implements OnInit {
   getalotss(){
     this.api.clockStatus().subscribe((res:any)=>{
       this.allalotsssCount = res.data;
-      this.totalPages = Math.ceil(this.nursesCount.length / this.itemsPerPage);
+      this.totalPages = Math.ceil(this.allalotsssCount.length / this.itemsPerPage);
       this.setPage(1);
-      console.log('nurse count', this.nursesCount)
+      console.log('nurse count', this.allalotsssCount)
     })
   }
 
@@ -64,7 +64,7 @@ export class ClockStatusComponent implements OnInit {
     this.currentPage = page;
     const startIndex = (page - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    this.paginatedNurses = this.nursesCount.slice(startIndex, endIndex);
+    this.paginatedNurses = this.allalotsssCount.slice(startIndex, endIndex);
   }
 
   nextPage() {
