@@ -48,16 +48,31 @@
                     <div *ngIf="admin.account" style="color:green;font-weight: bold;">Approved</div>
                   </button>
                 </td>
-                <td>
+
+                
+                <!-- <td>
                   <div *ngIf="!admin.account">
                     <button title="Home Care Licence Appoved" class="btn btn-primary bg-transparent"
                       (click)="verified(admin)">
-                      <!-- <i class="fa fa-check" aria-hidden="true"></i> -->
                       <i style="color: red;" class="fa-solid fa-check"></i>
                     </button>
                   </div>
                   <div *ngIf="admin.account" style="color: green; font-weight: bold;">Verified Licence</div>
+                </td> -->
+
+
+                <td class="d-flex">
+                 
+                  <div *ngIf="admin.account" style="color: green; font-weight: bold; margin-top: 10px;">Verified Licence</div>
+                  <button title="Toggle Licence Status" class="btn btn-primary bg-transparent mx-2" (click)="toggleVerified(admin)">
+                    <i *ngIf="!admin.account" style="color: green;" class="fa-solid fa-check"></i>
+                    <i *ngIf="admin.account" style="color: red;" class="fa-solid fa-xmark"></i>
+                  </button>
                 </td>
+
+
+
+
                 <td> <button title="Home Care Licence Appoved" class="btn btn-primary bg-transparent"> <i
                       (click)="deleteDoctors(admin.id)" style="color: rgba(255, 0, 0, 0.819);"
                       class="fa-solid fa-trash"></i> </button>

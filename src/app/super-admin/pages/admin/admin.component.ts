@@ -58,16 +58,30 @@ export class AdminComponent implements OnInit {
   }
 
 
-  verified(data: any) {
-    var id = data.id
+  // verified(data: any) {
+  //   var id = data.id
+  //   this.dataSend = {
+  //     account: true
+  //   }
+  //   this.api.ststusdoctorsForSuperAdmin(id, this.dataSend).subscribe(res => {
+  //     if (res) {
+  //       this.getDoctors()
+  //     }
+  //   })
+  // }
+
+
+
+  toggleVerified(data: any) {
+    var id = data.id;
     this.dataSend = {
-      account: true
-    }
+      account: !data.account // Toggle between true and false
+    };
     this.api.ststusdoctorsForSuperAdmin(id, this.dataSend).subscribe(res => {
       if (res) {
-        this.getDoctors()
+        this.getDoctors(); // Reload doctors list
       }
-    })
+    });
   }
 
 }
