@@ -1,0 +1,142 @@
+<div class="container mt-4">
+    <div class="page-title">Post Payment for Claims</div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+        <form>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="payer" class="form-label">Payer:</label>
+                    <input type="text" class="form-control" id="payer" placeholder="Enter Payer">
+                </div>
+                <div class="col-md-6">
+                    <label for="checkAmount" class="form-label">Check Amount:</label>
+                    <input type="text" class="form-control" id="checkAmount" placeholder="$">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="checkNumber" class="form-label">Check #:</label>
+                    <input type="text" class="form-control" id="checkNumber" placeholder="Check #">
+                </div>
+                <div class="col-md-6">
+                    <label for="transactionDate" class="form-label">Deposit/Transaction Date:</label>
+                    <input type="date" class="form-control" id="transactionDate">
+                    <a href="#" class="text-decoration-none">Today</a>
+                </div>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="writeOff">
+                <label class="form-check-label" for="writeOff">Automatically Write Off balance amount</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- Add Payment Entry Section -->
+    <div class="form-section">
+        <div class="sub-title py-3 px-3">Add Payment Entry</div>
+        <form>
+            <div class="row mb-3 mt-3">
+                <div class="col-md-4">
+                    <label for="patient" class="form-label">Patient:</label>
+                    <input type="text" class="form-control" id="patient" placeholder="Enter Patient">
+                </div>
+                <div class="col-md-4">
+                    <label for="claimNumber" class="form-label">Claim #:</label>
+                    <input type="text" class="form-control" id="claimNumber" placeholder="Enter Claim Number">
+                </div>
+                <div class="col-md-4">
+                    <label for="adjReason" class="form-label">Adj Reason:</label>
+                    <input type="text" class="form-control" id="adjReason" placeholder="Enter Adjustment Reason">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="chargeDebit" class="form-label">Charge (Debit):</label>
+                    <input type="text" class="form-control" id="chargeDebit" placeholder="$0.00">
+                </div>
+                <div class="col-md-4">
+                    <label for="prevPayment" class="form-label">Prev. Payment:</label>
+                    <input type="text" class="form-control" id="prevPayment" placeholder="$0.00">
+                </div>
+                <div class="col-md-4">
+                    <label for="paymentCredit" class="form-label">Payment (Credit):</label>
+                    <input type="text" class="form-control" id="paymentCredit" placeholder="$0.00">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="writeOffAmount" class="form-label">Write Off:</label>
+                    <input type="text" class="form-control" id="writeOffAmount" placeholder="$0.00">
+                </div>
+                <div class="col-md-4">
+                    <label for="balance" class="form-label">Balance:</label>
+                    <input type="text" class="form-control" id="balance" placeholder="$0.00">
+                </div>
+                <div class="col-md-4">
+                    <label for="comment" class="form-label">Comment:</label>
+                    <input type="text" class="form-control" id="comment" placeholder="Comment">
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-success me-2">Accept (Add)</button>
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Existing Table Section -->
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <form class="form-inline mb-3" style="display: flex;">
+                <label for="search" class="me-2 fw-bold mt-2">Search:</label>
+                <input type="text" class="form-control mr-2 py-4" id="search" placeholder="Search"
+                    style="width: 200px;">
+                <button type="button" class="btn btn-filter"><i class="fas fa-filter"></i></button>
+            </form>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-inline mb-3 float-md-end mt-2" style="display: flex; ">
+                <label for="entries" class="me-2 fw-bold">Show</label>
+                <select id="entries" class="form-control mr-2" style="width: auto; border-color: #FFA500;">
+                    <option value="10">10</option>
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <label for="entries fw-bold">entries</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="" style="overflow-x: scroll;">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Patient Name</th>
+                    <th>PAN #</th>
+                    <th>Admit Date</th>
+                    <th>Discharge Date</th>
+                    <th>DOB</th>
+                    <th>Office Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="7" class="text-center">No data available in table</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <div class="mt-3">Showing 0 to 0 of 0 entries</div>
+        <ul class="pagination gap-2">
+            <li class="page-item"><a class="page-link" href="#">First</a></li>
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="#">Last</a></li>
+        </ul>
+    </div>
+</div>

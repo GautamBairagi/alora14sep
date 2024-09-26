@@ -1,0 +1,187 @@
+<div class="container-fluid mt-2">
+    <h4 style="color: #2679b5">Create Electronic Claim File</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          
+          <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </symbol>
+        </svg>
+        
+        <div class="alert alert-primary d-flex align-items-center " role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+          <p> Note:To generate a test claim file, be sure to mark the Usage Indicator (ISA15) as "Test" on the Payer Setup screen - Claim tab.   </p>
+           <button type="button" class="btn-close  " aria-label="Close"></button>
+          </div>
+        </div>
+       
+        <div class="card p-3 shadow" >
+          <nav>
+              <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Claim Information</button>
+              </div>
+          </nav>
+          <div class="tab-content p-3 border bg-light " id="nav-tabContent ">
+              <div class="tab-pane fade active show " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              
+                      <div class="row  ">
+                          <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+                              <h6>Payer</h6>
+                              <div style="border-top: 1px solid rgb(166, 166, 166)"></div>  
+                              <div class="form-check mt-4">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                      Include visits that have been billed previously
+                                  </label>
+                                </div>
+
+                                <div class="mt-3 d-lg-flex d-md-flex d-sm-flex justify-content-between ">
+                                  <div class=" mt-1">
+                                  <label for="">Search:</label>
+                                  <input type="search"  aria-label="Search">
+                                  </div>
+                                  <div class="mt-1 d-flex justify-content-between mw-25 align-items-center">
+                                      <p>Show</p>
+                                      <select
+                                      class="form-select form-select-sm dropdown-toggle mb-2 border-danger"
+                                     style="width: 50%"
+                                      aria-label=".form-select-sm example">
+                                     
+                                      <option selected>10</option>
+                                      <option value="1">20</option>
+                                      <option value="2">30</option>
+                                      <option value="3">50</option>
+                                    </select>
+                                    <p>entries</p>
+                                  </div>
+                              </div>
+                              <div class="table-responsive-lg  ">
+         
+                                  <table class="table mt-1  table-hover ">
+                                    <thead style=" background-color: #F5F5F5; white-space: wrap; ">
+                                        <tr>
+                                            <th style="background-color: #EEEEEE; color: #2679B5;border: none; width: 10%;">Select</th>
+                                            <th style="background-color: #E9EDF2; color: #2679B5;border: none">Payer </th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                            <td>  <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckChecked"
+                                              
+                                              /></td>
+                                            <td>	MEDICAID</td>
+                                          </tr>
+                                          <tr>
+                                            <td>  <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckChecked"
+                                             
+                                              /></td>
+                                            <td>	MEDICAID</td>
+                                          </tr>
+                                          <tr>
+                                            <td>  <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="flexCheckChecked"
+                                                checked
+                                              /></td>
+                                            <td>	MEDICAID</td>
+                                          </tr>
+                                          
+                                      </tbody>
+                                  </table>
+                              </div> 
+
+                          </div>
+                          <div class="d-lg-flex d-md-block justify-content-between mt-3">
+                            <div class="">
+                              <p class="text-sm-center text-md-center text-lg-start">
+                                Showing 1 to 3 of 3 entries
+                              </p>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                              <nav aria-label="..." class="">
+                                <ul class="pagination">
+                                  <li class="page-item disabled">
+                                    <a
+                                      class="page-link"
+                                      href="#"
+                                      tabindex="-1"
+                                      aria-disabled="true"
+                                      >Previous</a
+                                    >
+                                  </li>
+                                  <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#" style="background-color: #6faed9;">1</a>
+                                  </li>
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav>
+                            </div>
+                          </div>
+
+                            <h6>Office</h6>
+                            <div style="border-top: 1px solid rgb(166, 166, 166)"></div>  
+                             
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                           
+                              <div class="w-75 d-flex gap-3">
+                                  <select
+                                    class="form-select mt-3"
+                                    aria-label="Default select example"
+                                    aria-placeholder="Entet-office"
+                                  >
+                                    <option></option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                      
+                                  <div class="form-check mt-4">
+                                    <input
+                                      class="form-check-input w-50"
+                                      type="checkbox"
+                                      value=""
+                                      id="flexCheckChecked"
+                                      checked
+                                    />
+                                    <label class="form-check-label " for="flexCheckChecked">
+                                      All
+                                    </label>
+                                  </div>
+                               </div>
+                                           
+                            </div>
+                           
+                            <div class="row mt-3 mw-25">
+                              <div class="col-lg-3 ">
+                                <input type="text" class="form-control"  aria-label="First name">
+                              </div>
+                            </div>
+
+                            <div class=" d-flex justify-content-end mt-3">
+                              <button type="button" class="btn text-white" style="background-color: #629B58;">Create Electronic Claim File</button>
+                             </div>
+               </div>
+            
+          
+         </div> 
+      </div>
+      <br><br><br><br>
+      <div class="d-flex justify-content-between pt-3 mt-5 mb-2 pb-2" style="border-top: 3px double #E5E5E5;">
+          <div>© 2024 Home Care Healthcare Systems, LLC.</div>
+          <div>Version: 8.57.4.14</div>
+        </div>
+  </div>
+</div>
+  
