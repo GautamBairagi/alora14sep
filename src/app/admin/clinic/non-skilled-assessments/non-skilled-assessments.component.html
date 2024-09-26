@@ -1,0 +1,62 @@
+<div class="container-fluied  mt-2">
+    <div class="page-title">Non-Skilled Assessment  <span class="sub-title ms-2"> <i class="fa-duotone fa-solid fa-arrows-turn-right"></i> Patient Admission Search</span></div>
+
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <form class="form-inline mb-3" style="display: flex;">
+                <label for="search" class="me-2 fw-bold mt-2">Search:</label>
+                <input type="text" class="form-control mr-2 py-4" id="search" placeholder="Search" style="width: 200px;">
+                <button type="button" class="btn btn-filter"><i class="fas fa-filter"></i></button>
+            </form>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-inline mb-3 float-md-end mt-2" style="display: flex; ">
+                <label for="entries" class="me-2 fw-bold">Show</label>
+                <select id="entries" class="form-control mr-2" style="width: auto; border-color: #FFA500;">
+                    <option value="10">10</option>
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <label for="entries fw-bold">entries</label>
+            </div>
+        </div>
+  
+ 
+ </div>
+    
+      <div class="" style="overflow-x: scroll;">
+    <table class="table table-bordered table-hover">
+        <thead >
+            <tr>
+                <th>Select</th>
+                <th>Patient Name</th>
+                <th>PAN #</th>
+                <th>Admit Date</th>
+                <th>Discharge Date</th>
+                <th>DOB</th>
+                <th>Office Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7" class="text-center">No data available in table</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <div class="d-flex justify-content-between">
+        <div>Showing 0 to 0 of 0 entries</div>
+        <ul class="pagination gap-2">
+            <li class="page-item"><a class="page-link" href="#">First</a></li>
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="#">Last</a></li>
+        </ul>
+    </div>
+
+    <div class="form-check mt-3">
+        <input type="checkbox" class="form-check-input" id="includeInactivated">
+        <label class="form-check-label" for="includeInactivated">Include Inactivated Admissions</label>
+    </div>
+</div>

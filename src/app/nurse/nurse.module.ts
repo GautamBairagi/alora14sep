@@ -10,6 +10,7 @@ import { NursePatientComponent } from './shared/nurse-patient/nurse-patient.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewPatientDetailsComponent } from './pages/view-patient-details/view-patient-details.component';
 import { NurseAloteViewComponent } from './pages/nurse-alote-view/nurse-alote-view.component';
+import { AddReportComponent } from './shared/add-report/add-report.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NurseAloteViewComponent } from './pages/nurse-alote-view/nurse-alote-vi
     NurseDashboardComponent,
     NursePatientComponent,
     ViewPatientDetailsComponent,
-    NurseAloteViewComponent
+    NurseAloteViewComponent,
+    AddReportComponent
   ],
   imports: [
     CommonModule,

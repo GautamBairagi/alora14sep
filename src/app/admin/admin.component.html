@@ -83,6 +83,264 @@
                 </a>
             </li>
 
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#billing"
+                        role="button" aria-expanded="false" aria-controls="billing">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Billing</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="billing" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/claim_summary" class="nav-link unique-nav-link">
+                                    Claim Summary
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/generate_claims" class="nav-link unique-nav-link">
+                                    Generate Claims
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/claims_PDGM" class="nav-link unique-nav-link">
+                                    Generate Claims PDGM
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/electronic_claim_file" class="nav-link unique-nav-link">
+                                    Electronic Claim File
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/generate_invoices" class="nav-link unique-nav-link">
+                                    Generate Invoices
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/invoice_summary" class="nav-link unique-nav-link">
+                                    Invoice Summary
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/batch_print_invoices" class="nav-link unique-nav-link">
+                                    Batch Print Invoices
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/batch_print_claims" class="nav-link unique-nav-link">
+                                    Batch Print Of Claims
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/pre_billing" class="nav-link unique-nav-link">
+                                    Pre Billing QA
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#adminMenu"
+                        role="button" aria-expanded="false" aria-controls="adminMenu">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Admin</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="adminMenu" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/customize" class="nav-link unique-nav-link">
+                                    Customize
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/user_security" class="nav-link unique-nav-link">
+                                    User / security manager
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/feature_activation" class="nav-link unique-nav-link">
+                                    Features Activation
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/account_invoices" class="nav-link unique-nav-link">
+                                    Account & Invoices
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#AR"
+                        role="button" aria-expanded="false" aria-controls="AR">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">AR</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="AR" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/transaction_log" class="nav-link unique-nav-link">
+                                    Transaction Log
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/post_payment" class="nav-link unique-nav-link">
+                                    Post Payment
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#clinic"
+                        role="button" aria-expanded="false" aria-controls="clinic">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Clinic</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="clinic" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/skilled_nursing" class="nav-link unique-nav-link">
+                                    Skilled Nursing Visit Notes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/assessments" class="nav-link unique-nav-link">
+                                    Assesments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/certificationPlan" class="nav-link unique-nav-link">
+                                    485 - Certification and Plan of Care
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/plan_of_care" class="nav-link unique-nav-link">
+                                    Plan of Care Plus
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/orders_and_docs" class="nav-link unique-nav-link">
+                                    Order & Documents
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a routerLink="/Admin/order_plus" class="nav-link unique-nav-link">
+                                    Order Plus 
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a routerLink="/Admin/medication_profile" class="nav-link unique-nav-link">
+                                    Medication Profile
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a routerLink="/Admin/medication_administration" class="nav-link unique-nav-link">
+                                    Medication Adminstration Log
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a routerLink="/Admin/physical_therapy" class="nav-link unique-nav-link">
+                                    Physical Therapy Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/occupational_therapy" class="nav-link unique-nav-link">
+                                    Occupational Therapy Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/speech_therapy" class="nav-link unique-nav-link">
+                                    Speech Therapy Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/medical_social_worker" class="nav-link unique-nav-link">
+                                    Medical Social Worker Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/aide_documents" class="nav-link unique-nav-link">
+                                    Aide Documents
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/non_skilled_assessments" class="nav-link unique-nav-link">
+                                    Non Skilled Assessment
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/electronic_health_record" class="nav-link unique-nav-link">
+                                    Electronic Health Records
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/braden_scale" class="nav-link unique-nav-link">
+                                    Braden Scale
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/supervisory_visit_notes" class="nav-link unique-nav-link">
+                                    Supervisory Visit Notes
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/incident_report" class="nav-link unique-nav-link">
+                                    Incident Report
+                                </a>
+                            </li>
+
+                           
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#careConnect"
+                        role="button" aria-expanded="false" aria-controls="careConnect">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Care Connect/Evv</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="careConnect" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/monitor" class="nav-link unique-nav-link">
+                                    Monitor
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/conflicts" class="nav-link unique-nav-link">
+                                    Conflicts
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
             <!-- hepl manu -->
             <div class="accordion" id="helpAccordion">
                 <li class="nav-item">
