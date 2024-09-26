@@ -45,6 +45,8 @@ import { ElectronicHealthRecordComponent } from './clinic/electronic-health-reco
 import { BradenScaleComponent } from './clinic/braden-scale/braden-scale.component';
 import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisory-visit.component';
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
+import { StaffScreeningComponent } from './covid19/staff-screening/staff-screening.component';
+import { PatientScreeningComponent } from './covid19/patient-screening/patient-screening.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -229,6 +231,14 @@ const routes: Routes = [
       {
         path:'incident_report',
         component:IncidentReportComponent
+      },
+      {
+        path:'patient_covid_screening',
+        component:PatientScreeningComponent
+      },
+      {
+        path:'staff_covid_screening',
+        component:StaffScreeningComponent
       }
     ]
 

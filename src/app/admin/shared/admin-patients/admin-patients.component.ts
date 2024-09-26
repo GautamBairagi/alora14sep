@@ -54,6 +54,7 @@ export class AdminPatientsComponent implements OnInit {
       image: [''],
       comments: [''],
       password: [''],
+      Covid19Status:[''],
       doctorId:[this.userId]
     });
   }
@@ -181,7 +182,8 @@ export class AdminPatientsComponent implements OnInit {
       'language',
       'comments',
       'password',
-      'doctorId'
+      'doctorId',
+      'Covid19Status'
   
         ];
   
@@ -196,7 +198,7 @@ export class AdminPatientsComponent implements OnInit {
         // Call the postDoctors method without headers
         this.service.addpatientsForSuperAdmin(formData).subscribe((res: any) => {
           console.log(res);
-          // this.router.navigate(['sign-in/signin']);
+          this.route.navigate(['Admin/view_patients']);
         },
         (err) => {
           console.log(err);

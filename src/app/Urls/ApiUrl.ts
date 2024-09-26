@@ -30,4 +30,5 @@ export const superAdminEndPoints = {
     addtionalservice: `${baseUrl}servicetitle`,
     addtionalserviceGet: `${baseUrl}servicetitles`,
     approveDoctor: `${baseUrl}doctor/accountStatusUpdate/`,
+    getCovidcSreening: `${baseUrl}doctor/accountStatusUpdate`,
 }

@@ -74,13 +74,31 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link unique-nav-link">
-               
-                    <i class="fas fa-solid fa-users unique-icon"></i>
-                    <span class="unique-nav-text">Covid 19 Screening</span>
-                </a>
-            </li>
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#covid"
+                        role="button" aria-expanded="false" aria-controls="covid">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Covid 19 Screening</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="covid" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/patient_covid_screening" class="nav-link unique-nav-link">
+                                    Patient Screening
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/staff_covid_screening" class="nav-link unique-nav-link">
+                                    Staff Screening
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </li>
+            </div>
             <li class="nav-item">
                 <a routerLink="/Admin/View_alot" class="nav-link unique-nav-link">
                     <i class="fas fa-solid fa-calendar-check unique-icon"></i>
