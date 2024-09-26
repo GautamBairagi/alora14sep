@@ -1,0 +1,230 @@
+<div class="row mt-4">
+   
+    <div class="container-fluied col-sm-12" id="render-body">
+        <div class="row no-gutters">
+            <div class="col-sm-6 col-md-2 col-lg-3 col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #5090C1;
+color: #fff; font-size: 22px;"><i class="fas fa-newspaper"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Announcements</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #f39c12!important;
+color: #fff; font-size: 22px;"><i class="fa fa-graduation-cap"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Live
+                                Training</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #f39c12!important;
+color: #fff; font-size: 22px;"><i class="fa fa-play"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Training
+                                Videos</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #5090C1;
+color: #fff; font-size: 22px;"><i class="fa fa-key"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Add
+                                Features</a></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <div class="accordion" id="accordionRAP">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="w-100 border-0" style="background-color: #5090C1; color: #fff;"
+                                type="button">
+                                RAP Due
+                            </button>
+                        </h2>
+                        <div id="collapseOneRAP" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionRAP">
+                            <div class="accordion-body">
+                                This widget will display all billable RAP claims. Claims older than 30 days would be
+                                rejected and so are not displayed in this view.
+                                <hr>
+                                <div class="container mt-4">
+                                    <div class="page-title" style="font-size: 18px;">Aide Documents
+                                        <span class="sub-title ms-2" style="font-size: 18px;">
+                                            <i class="fa-duotone fa-solid fa-arrows-turn-right"></i> Patient
+                                            Admission Search
+                                        </span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <form class="form-inline mb-3" style="display: flex;">
+                                            <label for="search" class="me-2 fw-bold mt-2">Search:</label>
+                                            <input type="text" class="form-control mr-2" id="search"
+                                                placeholder="Search" style="width: 200px;">
+                                            <button type="button" class="btn btn-filter"><i
+                                                    class="fas fa-filter"></i></button>
+                                        </form>
+                                        <div class="form-inline mb-3" style="display: flex;">
+                                            <label for="entries" class="me-2 fw-bold">Show</label>
+                                            <select id="entries" class="form-control mr-2"
+                                                style="width: auto; border-color: #FFA500;">
+                                                <option value="10">10</option>
+                                                <option value="25" selected>25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>
+                                            <label for="entries">Entries</label>
+                                        </div>
+                                    </div>
+
+                                    <div style="overflow-x: scroll;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="font-weight: bold !important;">Select</th>
+                                                    <th style="font-weight: bold !important;">Patient Name</th>
+                                                    <th style="font-weight: bold !important;">PAN #</th>
+                                                    <th style="font-weight: bold !important;">Admit Date</th>
+                                                    <th style="font-weight: bold !important;">Discharge Date</th>
+                                                    <th style="font-weight: bold !important;">DOB</th>
+                                                    <th style="font-weight: bold !important;">Office Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="7" class="text-center">No data available in table
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>Showing 0 to 0 of 0 entries</div>
+                                        <ul class="pagination gap-2">
+                                            <li class="page-item"><a class="page-link" href="#">First</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Last</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="form-check mt-3">
+                                        <input type="checkbox" class="form-check-input" id="includeInactivated">
+                                        <label class="form-check-label" for="includeInactivated">Include Inactivated
+                                            Admissions</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="" id="">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="border-0 w-100" type="button"
+                                style="background-color: #5090C1; color: #fff;">
+                                NOA Due
+                            </button>
+                        </h2>
+                        <div id="collapseTwoNOA" class="">
+                            <div class="accordion-body">
+                                This widget will display all pending Notices of Admission. EOE submitted without
+                                notice of admission will be rejected.
+                                Notice of Admission is required for any claim period to be billed, and will remain
+                                visible until NOA is created.
+                                <hr>
+                                <div class="container mt-4">
+                                    <div class="page-title" style="font-size: 18px;">Aide Documents
+                                        <span class="sub-title ms-2" style="font-size: 18px;">
+                                            <i class="fa-duotone fa-solid fa-arrows-turn-right"></i> Patient
+                                            Admission Search
+                                        </span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <form class="form-inline mb-3" style="display: flex;">
+                                            <label for="search" class="me-2 fw-bold mt-2">Search:</label>
+                                            <input type="text" class="form-control mr-2 " id="search"
+                                                placeholder="Search" style="width: 200px;">
+                                            <button type="button" class="btn btn-filter"><i
+                                                    class="fas fa-filter"></i></button>
+                                        </form>
+                                        <div class="form-inline mb-3" style="display: flex;">
+                                            <label for="entries" class="me-2 fw-bold">Show</label>
+                                            <select id="entries" class="form-control mr-2"
+                                                style="width: auto; border-color: #FFA500;">
+                                                <option value="10">10</option>
+                                                <option value="25" selected>25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>
+                                            <label for="entries">Entries</label>
+                                        </div>
+                                    </div>
+
+                                    <div style="overflow-x: scroll;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th style="font-weight: bold !important;">Select</th>
+                                                    <th style="font-weight: bold !important;">Patient Name</th>
+                                                    <th style="font-weight: bold !important;">PAN #</th>
+                                                    <th style="font-weight: bold !important;">Admit Date</th>
+                                                    <th style="font-weight: bold !important;">Discharge Date</th>
+                                                    <th style="font-weight: bold !important;">DOB</th>
+                                                    <th style="font-weight: bold !important;">Office Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="7" class="text-center">No data available in table
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>Showing 0 to 0 of 0 entries</div>
+                                        <ul class="pagination gap-2">
+                                            <li class="page-item"><a class="page-link" href="#">First</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Last</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="form-check mt-3">
+                                        <input type="checkbox" class="form-check-input" id="includeInactivated">
+                                        <label class="form-check-label" for="includeInactivated">Include Inactivated
+                                            Admissions</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -48,6 +48,7 @@ import { ElectronicHealthRecordComponent } from './clinic/electronic-health-reco
 import { BradenScaleComponent } from './clinic/braden-scale/braden-scale.component';
 import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisory-visit.component';
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
+import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { IncidentReportComponent } from './clinic/incident-report/incident-repor
     ElectronicHealthRecordComponent,
     BradenScaleComponent,
     SupervisoryVisitComponent,
-    IncidentReportComponent
+    IncidentReportComponent,
+    BillingDashboardComponent
   ],
   imports: [
     CommonModule,

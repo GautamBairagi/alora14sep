@@ -45,6 +45,7 @@ import { ElectronicHealthRecordComponent } from './clinic/electronic-health-reco
 import { BradenScaleComponent } from './clinic/braden-scale/braden-scale.component';
 import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisory-visit.component';
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
+import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -229,6 +230,10 @@ const routes: Routes = [
       {
         path:'incident_report',
         component:IncidentReportComponent
+      },
+      {
+        path:'View_BillingDashboard',
+        component:BillingDashboardComponent
       }
     ]
 
