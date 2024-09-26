@@ -56,13 +56,16 @@
                     <span class="unique-nav-text">Dashboard</span>
                 </a>
             </li>
-
             <li class="nav-item">
-                <a routerLink="/Admin/view_nurses" class="nav-link unique-nav-link">
-                    <i class="fa-solid fa-house-medical-circle-check unique-icon"></i>
-                    <span class="unique-nav-text">Care Givers</span>
+                <a class="nav-link unique-nav-link">
+                    <i class="fas fa-tachometer-alt unique-icon"></i>
+                    <span class="unique-nav-text">Billing Dashboard</span>
                 </a>
             </li>
+
+           
+
+           
             <li class="nav-item">
                 <a routerLink="/Admin/view_patients" class="nav-link unique-nav-link">
                
@@ -70,146 +73,26 @@
                     <span class="unique-nav-text">Patients</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link unique-nav-link">
+               
+                    <i class="fas fa-solid fa-users unique-icon"></i>
+                    <span class="unique-nav-text">Covid 19 Screening</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a routerLink="/Admin/View_alot" class="nav-link unique-nav-link">
                     <i class="fas fa-solid fa-calendar-check unique-icon"></i>
-                    <span class="unique-nav-text">All Alot</span>
+                    <span class="unique-nav-text">Scheduling</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a routerLink="/Admin/clock_status" class="nav-link unique-nav-link">
-                    <i class="fas fa-solid fa-clock-rotate-left unique-icon"></i>
-                    <span class="unique-nav-text">Clock Status</span>
-                </a>
-            </li>
-
-            <div class="accordion" id="adminAccor">
-                <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#billing"
-                        role="button" aria-expanded="false" aria-controls="billing">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
-                        <span class="unique-nav-text">Billing</span>
-                        <i class="fas fa-chevron-down unique-chevron"></i>
-                    </a>
-                    <div class="collapse unique-submenu" id="billing" data-bs-parent="#adminAccor">
-                        <ul class="flex-column nav">
-                            <li class="nav-item">
-                                <a routerLink="/Admin/claim_summary" class="nav-link unique-nav-link">
-                                    Claim Summary
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/generate_claims" class="nav-link unique-nav-link">
-                                    Generate Claims
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/claims_PDGM" class="nav-link unique-nav-link">
-                                    Generate Claims PDGM
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/electronic_claim_file" class="nav-link unique-nav-link">
-                                    Electronic Claim File
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/generate_invoices" class="nav-link unique-nav-link">
-                                    Generate Invoices
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/invoice_summary" class="nav-link unique-nav-link">
-                                    Invoice Summary
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/batch_print_invoices" class="nav-link unique-nav-link">
-                                    Batch Print Invoices
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/batch_print_claims" class="nav-link unique-nav-link">
-                                    Batch Print Of Claims
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/pre_billing" class="nav-link unique-nav-link">
-                                    Pre Billing QA
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </div>
-
-            <div class="accordion" id="adminAccor">
-                <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#adminMenu"
-                        role="button" aria-expanded="false" aria-controls="adminMenu">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
-                        <span class="unique-nav-text">Admin</span>
-                        <i class="fas fa-chevron-down unique-chevron"></i>
-                    </a>
-                    <div class="collapse unique-submenu" id="adminMenu" data-bs-parent="#adminAccor">
-                        <ul class="flex-column nav">
-                            <li class="nav-item">
-                                <a routerLink="/Admin/customize" class="nav-link unique-nav-link">
-                                    Customize
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/user_security" class="nav-link unique-nav-link">
-                                    User / security manager
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/feature_activation" class="nav-link unique-nav-link">
-                                    Features Activation
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/account_invoices" class="nav-link unique-nav-link">
-                                    Account & Invoices
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </div>
-
-            <div class="accordion" id="adminAccor">
-                <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#AR"
-                        role="button" aria-expanded="false" aria-controls="AR">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
-                        <span class="unique-nav-text">AR</span>
-                        <i class="fas fa-chevron-down unique-chevron"></i>
-                    </a>
-                    <div class="collapse unique-submenu" id="AR" data-bs-parent="#adminAccor">
-                        <ul class="flex-column nav">
-                            <li class="nav-item">
-                                <a routerLink="/Admin/transaction_log" class="nav-link unique-nav-link">
-                                    Transaction Log
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/Admin/post_payment" class="nav-link unique-nav-link">
-                                    Post Payment
-                                </a>
-                            </li>
-                           
-                        </ul>
-                    </div>
-                </li>
-            </div>
-
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
                     <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#clinic"
                         role="button" aria-expanded="false" aria-controls="clinic">
                         <i class="fa-solid fa-circle-question unique-icon"></i>
-                        <span class="unique-nav-text">Clinic</span>
+                        <span class="unique-nav-text">Clinical</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
                     <div class="collapse unique-submenu" id="clinic" data-bs-parent="#adminAccor">
@@ -314,7 +197,150 @@
                     </div>
                 </li>
             </div>
+            <li class="nav-item">
+                <a  class="nav-link unique-nav-link">
+                    <i class="fas fa-solid fa-calendar-check unique-icon"></i>
+                    <span class="unique-nav-text">Home Health Mail</span>
+                </a>
+            </li>
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#billing"
+                        role="button" aria-expanded="false" aria-controls="billing">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Billing</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="billing" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/claim_summary" class="nav-link unique-nav-link">
+                                    Claim Summary
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/generate_claims" class="nav-link unique-nav-link">
+                                    Generate Claims
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/claims_PDGM" class="nav-link unique-nav-link">
+                                    Generate Claims PDGM
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/electronic_claim_file" class="nav-link unique-nav-link">
+                                    Electronic Claim File
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/generate_invoices" class="nav-link unique-nav-link">
+                                    Generate Invoices
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/invoice_summary" class="nav-link unique-nav-link">
+                                    Invoice Summary
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/batch_print_invoices" class="nav-link unique-nav-link">
+                                    Batch Print Invoices
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/batch_print_claims" class="nav-link unique-nav-link">
+                                    Batch Print Of Claims
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/pre_billing" class="nav-link unique-nav-link">
+                                    Pre Billing QA
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#AR"
+                        role="button" aria-expanded="false" aria-controls="AR">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">AR</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="AR" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/transaction_log" class="nav-link unique-nav-link">
+                                    Transaction Log
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/post_payment" class="nav-link unique-nav-link">
+                                    Post Payment
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </li>
+            </div>
+            <li class="nav-item">
+                <a routerLink="/Admin/view_nurses" class="nav-link unique-nav-link">
+                    <i class="fa-solid fa-house-medical-circle-check unique-icon"></i>
+                    <span class="unique-nav-text">Care Givers</span>
+                </a>
+            </li>
+          
+            <li class="nav-item">
+                <a routerLink="/Admin/clock_status" class="nav-link unique-nav-link">
+                    <i class="fas fa-solid fa-clock-rotate-left unique-icon"></i>
+                    <span class="unique-nav-text">Clock Status</span>
+                </a>
+            </li>
 
+          
+
+            <div class="accordion" id="adminAccor">
+                <li class="nav-item">
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#adminMenu"
+                        role="button" aria-expanded="false" aria-controls="adminMenu">
+                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <span class="unique-nav-text">Admin</span>
+                        <i class="fas fa-chevron-down unique-chevron"></i>
+                    </a>
+                    <div class="collapse unique-submenu" id="adminMenu" data-bs-parent="#adminAccor">
+                        <ul class="flex-column nav">
+                            <li class="nav-item">
+                                <a routerLink="/Admin/customize" class="nav-link unique-nav-link">
+                                    Customize
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/user_security" class="nav-link unique-nav-link">
+                                    User / security manager
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/feature_activation" class="nav-link unique-nav-link">
+                                    Features Activation
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/Admin/account_invoices" class="nav-link unique-nav-link">
+                                    Account & Invoices
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </div>
+
+            
+
+            
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
                     <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#careConnect"
