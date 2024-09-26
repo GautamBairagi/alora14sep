@@ -11,7 +11,7 @@
           class="btn btn-primary">Add Admin</button>-->
 
         <button type="button" [routerLink]="['/superAdmin/admins']" routerLinkActive="router-link-active"
-          class="btn btn-primary btn-icon">
+          class="btn "  style="color: #438eb9;">
           <i class="fas fa-user-plus"></i> Add Admin
         </button>
       </div>
@@ -25,6 +25,8 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Mobile Number</th>
+                <th>Form Date</th>
+                <th>To Date</th>
                 <th>Status</th>
                 <th>View Licence</th>
                 <th>Licence Verified</th>
@@ -34,28 +36,27 @@
             <tbody>
               <tr *ngFor="let admin of paginatedDoctors; let i = index">
                 <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
-                <td>
-                  <div class="mt-2"><img style="width: 50px; border-radius: 30px; text-align: center;"
-                      src="{{admin.image}}" alt="img" /></div>
+                <td style="height: 20px !important;">
+                  <div class="mt-2"><img style="width: 50px; height: 40px; border-radius: 20px; text-align: center;"
+                      src="{{admin.image}}" class="img-fluid" alt="img" /></div>
                 </td>
                 <td>{{ admin.name }}</td>
                 <td>{{ admin.email }}</td>
                 <!-- <td>{{ admin.password }}</td> -->
                 <!-- <td> <img [src]="admin.image" class="img-fluid w-100" alt=""> </td> -->
                 <td>{{ admin.mobileNumber }}</td>
+                <td>{{ admin.formDate }}</td>
+                <td>{{ admin.toDate }}</td>
                 <td>
                   <button class="btn btn-primary bg-transparent">
                     <div *ngIf="!admin.account" style="color:#005dac;font-weight: bold;">Pending</div>
                     <div *ngIf="admin.account" style="color:green;font-weight: bold;">Approved</div>
                   </button>
                 </td>
-
-
-
                 <td>
                   <div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="adminById(admin.id)" data-bs-target="#docModal">
-                      Document
+                    <button type="button" class="btn" data-bs-toggle="modal" (click)="adminById(admin.id)" data-bs-target="#docModal"  style="color: #438eb9;"> <i class="fa-solid fa-id-card"></i>
+                      Licence 
                     </button>
                 
                     <!-- Modal -->
@@ -91,9 +92,9 @@
 
 
 
-                <td class="d-flex">
+                <td class="d-flex ">
 
-                  <div *ngIf="admin.account" style="color: green; font-weight: bold; margin-top: 10px;">Verified Licence
+                  <div *ngIf="admin.account" style="color: green; font-weight: bold; ">Verified Licence
                   </div>
                   <button title="Toggle Licence Status" class="btn btn-primary bg-transparent mx-2"
                     (click)="toggleVerified(admin)">
@@ -101,33 +102,7 @@
                     <i *ngIf="admin.account" style="color: red;" class="fa-solid fa-xmark"></i>
                   </button>
                 </td>
-                <!-- <td> 
-                   <button title="Home Care Licence Appoved" (click)="adminById(admin.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary bg-transparent"> <i
-                       style="color: rgba(255, 0, 0, 0.819);"
-                      class="fa-solid fa-trash"></i> </button> -->
-
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete {{ adminByIdData.name }}?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" (click)="deleteDoctors(adminByIdData.id)" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-                </td> -->
-
-
-
+               
                 <td>
                   <button (click)="adminById(admin.id)" class="btn btn-primary bg-transparent m-1"
                     style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i

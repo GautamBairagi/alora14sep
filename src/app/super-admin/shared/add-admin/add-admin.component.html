@@ -7,87 +7,7 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2">
         <h2>Add Admin </h2>
         <hr>
-        <!-- <form [formGroup]="myForm" >
-                    <div class="container">
-                      <div class="row mt-2">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="name">Name</label>
-                          <input type="text" id="name" placeholder="Enter name here" class="form-control" formControlName="name">
-                          <div *ngIf="myForm.get('name')?.touched && myForm.get('name')?.invalid">
-                            <small *ngIf="myForm.get('name')?.errors?.['required']" class="text-danger">Name is required.</small>
-                            <small *ngIf="myForm.get('name')?.errors?.['minlength']" class="text-danger">Name must be at least 3 characters.</small>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="email">Email</label>
-                          <input type="email" id="email" placeholder="Enter email here" class="form-control" formControlName="email">
-                          <div *ngIf="myForm.get('email')?.touched && myForm.get('email')?.invalid">
-                            <small *ngIf="myForm.get('email')?.errors?.['required']" class="text-danger">Email is required.</small>
-                            <small *ngIf="myForm.get('email')?.errors?.['email']" class="text-danger">Please enter a valid email.</small>
-                          </div>
-                        </div>
-                      </div>
-                  
-                      <div class="row mt-4">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="password">Password</label>
-                          <input type="text" id="password" placeholder="Enter password here" class="form-control" formControlName="password">
-                          <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.invalid">
-                            <small *ngIf="myForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</small>
-                            <small *ngIf="myForm.get('password')?.errors?.['minlength']" class="text-danger">Password must be at least 6 characters.</small>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="mobileNumber">Mobile Number</label>
-                          <input type="tel" id="mobileNumber" placeholder="Enter mobile number here" class="form-control" formControlName="mobileNumber">
-                          <div *ngIf="myForm.get('mobileNumber')?.touched && myForm.get('mobileNumber')?.invalid">
-                            <small *ngIf="myForm.get('mobileNumber')?.errors?.['required']" class="text-danger">Mobile Number is required.</small>
-                            <small *ngIf="myForm.get('mobileNumber')?.errors?.['pattern']" class="text-danger">Please enter a valid 10-digit mobile number.</small>
-                          </div>
-                        </div>
-                      </div>
-                  
-                      <div class="row mt-4">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="image">Image</label>
-                          <input type="file" id="image" class="form-control" formControlName="image" multiple="multiple" accept="image/*,application/pdf"   (change)="Onupload($event)">
-                          <div *ngIf="myForm.get('image')?.touched && myForm.get('image')?.invalid">
-                            <small *ngIf="myForm.get('image')?.errors?.['required']" class="text-danger">Image is required.</small>
-                          </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="license">License</label>
-                          <input type="file" id="license" class="form-control" formControlName="license" multiple="multiple" accept="image/*,application/pdf" (change)="Onupload2($event)">
-                          <div *ngIf="myForm.get('license')?.touched && myForm.get('license')?.invalid">
-                            <small *ngIf="myForm.get('license')?.errors?.['required']" class="text-danger">license is required.</small>
-                          </div>
-                        </div>
-                      </div>
-
-                      
-                      <div class="row mt-4">
-                        
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                          <label for="fullAddress">Full Address</label>
-                          <textarea id="fullAddress" placeholder="Enter full address here" class="form-control" formControlName="fullAddress"></textarea>
-                          <div *ngIf="myForm.get('fullAddress')?.touched && myForm.get('fullAddress')?.invalid">
-                            <small *ngIf="myForm.get('fullAddress')?.errors?.['required']" class="text-danger">Full Address is required.</small>
-                            <small *ngIf="myForm.get('fullAddress')?.errors?.['minlength']" class="text-danger">Full Address must be at least 3 characters.</small>
-                          </div>
-                        </div>
-                        
-                      </div>
-                      
-                  
-                      <div class="row mt-4">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                          <button type="submit" class="btn btn-primary w-25 m-1" (click)="onSubmit()" [disabled]="myForm.invalid">Submit</button>
-                          <button type="cancle" class="btn btn-primary w-25 m-1" (click)="onCancle()" >Cancel</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form> -->
-
+      
 
         <form [formGroup]="addDoctorform">
           <div class="container">
@@ -104,14 +24,10 @@
 
                 </div>
               </div>
-            </div>
-
-            <div class="row">
 
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="middleName" class="form-label">email
-                    <span>(Optional)</span></label>
+                  <label for="middleName" class="form-label">Email</label>
                   <input type="text" id="middleName" class="form-control" placeholder="email " formControlName="email"
                     class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['email'].errors && ckDep }" />
                   <p class="text-danger" *ngIf="addDoctorform.controls['password'].errors && ckDep"> Enter your email
@@ -121,80 +37,91 @@
 
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="lastName" class="form-label">password
+                  <label for="lastName" class="form-label">Password
                   </label>
-                  <input type="text" id="lastName" class="form-control" placeholder="password "
+                  <input type="text" id="lastName" class="form-control" placeholder="Password "
                     formControlName="password" class="form-control"
                     [ngClass]="{'is-invalid': addDoctorform.controls['password'].errors && ckDep }" />
                   <p class="text-danger" *ngIf="addDoctorform.controls['password'].errors && ckDep"> Enter your password
                   </p>
-
                 </div>
               </div>
-
+            </div>
+            <div class="row">
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="disabledTextInput" class="form-label">mobileNumber</label>
+                  <label for="disabledTextInput" class="form-label">Mobile Number</label>
  
-                  <input type="tel" id="disabledTextInput" formControlName="mobileNumber" placeholder="mobileNumber"
+                  <input type="tel" id="disabledTextInput" formControlName="mobileNumber" placeholder="Mobile Number"
                     formControlName="mobileNumber" class="form-control"
                     [ngClass]="{'is-invalid': addDoctorform.controls['mobileNumber'].errors && ckDep }" />
                   <p class="text-danger" *ngIf="addDoctorform.controls['mobileNumber'].errors && ckDep"> Enter your
-                    mobileNumber</p>
-
+                    Mobile Number</p>
                 </div>
               </div>
 
-            </div>
-
-            <div class="row">
-
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="fullAddress" class="form-label">fullAddress<span>(Optional)</span> </label>
-                  <input type="text" id="expreience" class="form-control" placeholder="fullAddress"
+                  <label for="fullAddress" class="form-label">Full Address</label>
+                  <input type="text" id="expreience" class="form-control" placeholder="Full Address"
                     formControlName="fullAddress" class="form-control"
                     [ngClass]="{'is-invalid': addDoctorform.controls['fullAddress'].errors && ckDep }" />
-                    <p class="text-danger" *ngIf="addDoctorform.controls['fullAddress'].errors && ckDep">Enter your fullAddress</p>
-
+                    <p class="text-danger" *ngIf="addDoctorform.controls['fullAddress'].errors && ckDep">Enter your Full Address</p>
                 </div>
               </div>
 
-            </div>
-
-
-            <div class="row">
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="">image <span>(Optional)</span></label>
+                  <label for="">Image</label>
                   <input class="form-control" type="file" formControlName="image" class="form-control"
                     (change)="Onupload($event)"
                     [ngClass]="{'is-invalid': addDoctorform.controls['image'].errors && ckDep }">
                   <p class="text-danger" *ngIf="addDoctorform.controls['mobileNumber'].errors && ckDep"> Enter your
-                    image</p>
+                    Image</p>
 
+                </div>
+              </div>
+
+            </div>
+          
+            <div class="row">
+           
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="">License </label>
+                  <input class="form-control" type="file" formControlName="license" (change)="Onuploadquali($event)"
+                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['license'].errors && ckDep }">
+                  <p class="text-danger" *ngIf="addDoctorform.controls['license'].errors && ckDep"> Enter License</p>
                 </div>
               </div>
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="form-group">
-                  <label for="">license </label>
-                  <input class="form-control" type="file" formControlName="license" (change)="Onuploadquali($event)"
-                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['license'].errors && ckDep }">
-                  <p class="text-danger" *ngIf="addDoctorform.controls['license'].errors && ckDep"> Enter license</p>
+                  
+                  <label for="">Form Date </label>
+                  <input class="form-control" type="date" formControlName="formDate" (change)="Onuploadquali($event)"
+                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['formDate'].errors && ckDep }">
+                  <p class="text-danger" *ngIf="addDoctorform.controls['formDate'].errors && ckDep"> Enter License</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="form-group">
+                  <label for="">To Date </label>
+                  <input class="form-control" type="date" formControlName="toDate" (change)="Onuploadquali($event)"
+                    class="form-control" [ngClass]="{'is-invalid': addDoctorform.controls['toDate'].errors && ckDep }">
+                  <p class="text-danger" *ngIf="addDoctorform.controls['toDate'].errors && ckDep"> Enter License</p>
                 </div>
               </div>
             </div>
-
             <div class="row mt-4">
               <div class="form-login">
-                <button class="btn btn-login" type="submit" (click)="addDoctor()">
+                <button class="btn btn-login   btn-primary" style="width: 100px;" type="submit" (click)="addDoctor()">
                   Save
                 </button>
-
+                <button class="btn btn-login   btn-danger mx-1" style="width: 100px;" type="cancel" (click)="Cancel()">
+                Cancel
+                </button>
               </div>
-
             </div>
-
           </div>
         </form>
       </div>

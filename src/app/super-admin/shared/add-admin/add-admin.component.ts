@@ -318,6 +318,8 @@ constructor(
     fullAddress: ['', Validators.required],
     image: ['', Validators.required],
     license: ['', Validators.required],
+    formDate: ['', Validators.required],
+toDate: ['', Validators.required],
    
   })
 }
@@ -426,6 +428,8 @@ addDoctor() {
         'password',
         'mobileNumber',
         'fullAddress',
+        'formDate',
+'toDate'
       ];
 
       for (const key of arr) {
@@ -438,7 +442,7 @@ addDoctor() {
       // Call the postDoctors method without headers
       this.service.postDoctors(formData).subscribe((res: any) => {
         console.log(res);
-        this.router.navigate(['sign-in/signin']);
+        this.router.navigate(['/superAdmin/view_admins']);
       },
       (err) => {
         console.log(err);
@@ -450,16 +454,12 @@ addDoctor() {
   }
 }
 
-
-
-
-
 openproduct() {
   this.router.navigate(["super-admin/doctor"])
 }
-Cancel(){
-  this.router.navigate(["/super-admin/doctor"])
-}
 
+Cancel(){
+  this.router.navigate(["/superAdmin/view_admins"])
+}
 
 }

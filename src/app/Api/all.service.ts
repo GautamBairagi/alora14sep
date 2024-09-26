@@ -81,6 +81,14 @@ postDoctors(data: any) {
    getallalotnursesForAdmin(){
     return this.get(superAdminEndPoints.getallalotssgetNursesForAdmin)
    }
+
+   Getallreports(){
+    const adminId = localStorage.getItem('id');
+    return this.get(superAdminEndPoints.getallreports + adminId)
+   }
+   
+
+
    adnursesForSuperAdmin(data:any){
     return this.post(superAdminEndPoints.addnurses, data)
    }
