@@ -1,0 +1,321 @@
+<div class="container-fluid pt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h4><span style="color: #478FCA !important;">Home Care</span> <span
+                    style="color: #DD5A43 !important;">Mail</span>
+            </h4>
+
+        </div>
+        <hr>
+        <div class="">
+            <div class="d-flex justify-content-end">
+                <button class="btn" style="background-color: #FEE188 !important;">Help Video</button>
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </div>
+    </div>
+<div>
+    
+</div>
+    <div class="row">
+        <div class="col-md-8 col-lg-8"></div>
+        <div class="col-md-4 col-lg-4 mt-4">
+<div class="d-flex justify-content-end">
+    <button class="btn btn-info fw-bold text-light border-0  mx-1"
+    style="background-color: #428BCA !important;">Folder <i class="fa-solid fa-folder"></i></button>
+<!-- Button trigger modal -->
+<button type="button" class="btn mx-2 " style="background-color:  #9585BF ;" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">Compose <i class="fa-solid fa-envelope-circle-check"></i> </button>
+
+</div>
+            
+            <!-- Modal -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header " style="background-color: #428BCA;">
+                            <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body mt-2">
+                            <form action="" class="container" [formGroup]="emailForm">
+                                <div class=" row">
+                                    <div class="col-lg-2">
+                                        <label for="">From</label>
+                                    </div>
+                                    <div class="col-md- ms-auto">
+                                        <input type="text" formControlName="from"
+                                            [ngClass]="{'is-invalid': emailForm.controls['from'].errors && ck }"
+                                            id="from">
+                                        <p class="text-danger" *ngIf="emailForm.controls['from'].errors && ck">From is
+                                            required
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <label for="inputState" class="form-label">To</label>
+                                        <select id="inputState" class="form-select" formControlName="to"
+                                            [ngClass]="{'is-invalid': emailForm.controls['to'].errors && ck }"
+                                            id="to">
+                                            <option selected>Choos...1</option>
+                                            <option>Choos...2</option>
+                                        </select>
+                                        <p class="text-danger" *ngIf="emailForm.controls['to'].errors && ck">To 
+                                            required
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 mt-4">
+
+                                        <button type="button" class="btn " style="background-color: #428BCA;">Change
+                                            Recipient List</button>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-3">
+                                    <label for="formGroupExampleInput" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        formControlName="subject"
+                                        [ngClass]="{'is-invalid': emailForm.controls['subject'].errors && ck }"
+                                        id="subject">
+                                    <p class="text-danger" *ngIf="emailForm.controls['subject'].errors && ck">Subject is
+                                        required
+                                    </p>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Messages:</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                        formControlName="message"
+                                        [ngClass]="{'is-invalid': emailForm.controls['message'].errors && ck }"
+                                        id="message" rows="3"></textarea>
+                                    <p class="text-danger" *ngIf="emailForm.controls['message'].errors && ck">Message is
+                                        required
+                                    </p>
+                                </div>
+
+                                <!-- <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [ngClass]="{'is-invalid': emailForm.controls['message'].errors && ck }" id="message">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Default checkbox
+                                    </label>
+                                </div> -->
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn  btn-outline-secondary" (click)="addemails()">Send</button>
+                            <button data-bs-dismiss="modal" type="button"
+                                class="btn  btn-outline-secondary">close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="col-md-12 mb-5">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true"> <i class="fa-solid fa-inbox"></i> <br>Inbox</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> <i style="color: orange;" class="fa-solid fa-paper-plane"></i> <br>Sent</button>
+
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
+                <div class=" border d-flex p-2 gap-1 ">
+                    <input type="checkbox">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <p class="mx-auto"><span>Inbox</span> (0 Unread messages)</p>
+                </div>
+                <div class="border ">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead >
+                                <tr style="color: rgb(19, 62, 62) !important" >
+                                   <th></th>
+                                    <th style="color: rgb(134, 135, 136)" >From</th>
+                                    <th style="color: rgb(134, 135, 136)">Subject</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+
+                                    <th style="color: rgb(134, 135, 136)">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of sentEmailData; let i = index">
+                                    <td> <input type="checkbox"> </td>
+                                    <td  style="color: #428BCA;"> {{ item.from }} </td>
+                                    <td> {{ item.subject }} </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td> {{ item.created_at }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                 
+
+
+                </div>
+
+                <div class="col-12 bg-light p-3">
+                    <span class="p-3" style="color: black;">{{sentEmailDatas}} messages total
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+            <div class=" border d-flex p-2 gap-1 ">
+                <input type="checkbox">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <p class="mx-auto"><span>Sent</span> ({{sentEmailDatas}} total messages)</p>
+            </div>
+            <div class="border">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead >
+                            <tr style="color: rgb(19, 62, 62) !important" >
+                               <th></th>
+                                <th style="color: rgb(134, 135, 136)" >From</th>
+                                <th style="color: rgb(134, 135, 136)">Subject</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+
+                                <th style="color: rgb(134, 135, 136)">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of sentEmailData; let i = index">
+                                <td> <input type="checkbox"> </td>
+                                <td  style="color: #428BCA;"> {{ item.from }} </td>
+                                <td> {{ item.subject }} </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td> {{ item.created_at }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

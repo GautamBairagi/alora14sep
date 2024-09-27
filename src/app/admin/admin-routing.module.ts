@@ -46,6 +46,7 @@ import { BradenScaleComponent } from './clinic/braden-scale/braden-scale.compone
 import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisory-visit.component';
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
 import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
+import { AloramailComponent } from './aloramail/aloramail/aloramail.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -234,7 +235,12 @@ const routes: Routes = [
       {
         path:'View_BillingDashboard',
         component:BillingDashboardComponent
+      },
+      {
+        path:'View_Aloramail',
+        component:AloramailComponent
       }
+    
     ]
 
    }

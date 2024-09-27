@@ -14,6 +14,8 @@ export const superAdminEndPoints = {
     addslotpost: `${baseUrl}allot`,
     nursesById: `${baseUrl}nurse/`,
     allotedByIdById:`${baseUrl}allot/`,
+    addemail :`${baseUrl}alora`,
+    getEmail :`${baseUrl}aloras`,
     allotById: `${baseUrl}allot/`,
     getNursesForAdmin: `${baseUrl}nurse/doctorid/`,
     getallalotssgetNursesForAdmin: `${baseUrl}allots`,

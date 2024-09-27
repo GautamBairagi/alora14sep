@@ -49,6 +49,7 @@ import { BradenScaleComponent } from './clinic/braden-scale/braden-scale.compone
 import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisory-visit.component';
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
 import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
+import { AloramailComponent } from './aloramail/aloramail/aloramail.component';
 
 
 @NgModule({
@@ -98,7 +99,8 @@ import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard
     BradenScaleComponent,
     SupervisoryVisitComponent,
     IncidentReportComponent,
-    BillingDashboardComponent
+    BillingDashboardComponent,
+    AloramailComponent
   ],
   imports: [
     CommonModule,
