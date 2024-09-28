@@ -48,6 +48,7 @@ import { IncidentReportComponent } from './clinic/incident-report/incident-repor
 import { StaffScreeningComponent } from './covid19/staff-screening/staff-screening.component';
 import { PatientScreeningComponent } from './covid19/patient-screening/patient-screening.component';
 import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
+import { AloramailComponent } from './aloramail/aloramail/aloramail.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -244,7 +245,12 @@ const routes: Routes = [
       {
         path:'View_BillingDashboard',
         component:BillingDashboardComponent
+      },
+      {
+        path:'View_Aloramail',
+        component:AloramailComponent
       }
+    
     ]
 
    }

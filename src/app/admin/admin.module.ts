@@ -51,6 +51,7 @@ import { IncidentReportComponent } from './clinic/incident-report/incident-repor
 import { PatientScreeningComponent } from './covid19/patient-screening/patient-screening.component';
 import { StaffScreeningComponent } from './covid19/staff-screening/staff-screening.component';
 import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
+import { AloramailComponent } from './aloramail/aloramail/aloramail.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard
     IncidentReportComponent,
     PatientScreeningComponent,
     StaffScreeningComponent,
-    BillingDashboardComponent
+    BillingDashboardComponent,
+    AloramailComponent
   ],
   imports: [
     CommonModule,

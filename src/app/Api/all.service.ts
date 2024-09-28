@@ -25,6 +25,15 @@ export class AllService extends HttpService {
    doctorsForSuperAdmin(){
     return this.get(superAdminEndPoints.getdoctors)
    }
+   getEmailAdmin(){
+    return this.get(superAdminEndPoints.getEmail)
+   }
+   addemailAdmin(data: any){
+    return this.post(superAdminEndPoints.addemail,data)
+   }
+
+
+   
    
    deletedoctorsForSuperAdmin(id:any){
     return this.delete(superAdminEndPoints.deletedoctor + id)
