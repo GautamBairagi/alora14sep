@@ -47,6 +47,7 @@ import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisor
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
 import { StaffScreeningComponent } from './covid19/staff-screening/staff-screening.component';
 import { PatientScreeningComponent } from './covid19/patient-screening/patient-screening.component';
+import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: AdminComponent,
@@ -239,6 +240,10 @@ const routes: Routes = [
       {
         path:'staff_covid_screening',
         component:StaffScreeningComponent
+      },
+      {
+        path:'View_BillingDashboard',
+        component:BillingDashboardComponent
       }
     ]
 

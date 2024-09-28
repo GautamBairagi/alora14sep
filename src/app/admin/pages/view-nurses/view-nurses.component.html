@@ -19,8 +19,8 @@
                           <th>Sr No</th>
                           <th>Name</th>
                           <th>Email</th>
-                          <!-- <th>Password</th> -->
                           <th>Mobile Number</th>
+                          <th>Covid19 Tested</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -31,6 +31,7 @@
                           <td>{{ admin.email }}</td>
                           <!-- <td>{{ admin.password }}</td> -->
                           <td>{{ admin.mobileNumber }}</td>
+                          <td> {{ admin.Covid19Status }} </td>
                           <td>  
                             <button (click)="nurseById(admin.id)" class="btn btn-primary bg-transparent m-1" style="color: #438eb9;" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fa-solid fa-pen-to-square"></i></button>
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

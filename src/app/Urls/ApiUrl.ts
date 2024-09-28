@@ -27,6 +27,7 @@ export const superAdminEndPoints = {
     clockStatusForAdmin: `${baseUrl}clockinout/doctor/`,
     addpatients: `${baseUrl}patient`,
     patientById: `${baseUrl}patient/`,
+    patientForDtl: `${baseUrl}patient/`,
     addtionalservice: `${baseUrl}servicetitle`,
     addtionalserviceGet: `${baseUrl}servicetitles`,
     approveDoctor: `${baseUrl}doctor/accountStatusUpdate/`,

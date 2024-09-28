@@ -36,21 +36,54 @@ export class AddReportComponent implements OnInit {
       nurseId:[this.userId]
     });
 
-this.getAllotedPatients()    
+    this.getPatientName()
+
   }
 
   nurseNameFromStorage: any = localStorage.getItem('nurse_name');
-  allotedPatients: any[] = [];
-  filteredPatients: any[] = [];
   
-  getAllotedPatients() {
-    this.service.getallalotnursesForAdmin().subscribe((res: any) => {
-      this.allotedPatients = res.data;
-      this.filteredPatients = this.allotedPatients.filter(patient => patient.nurseName === this.nurseNameFromStorage);
+  patientNames:any;
 
-      console.log('Filtered patient count', this.filteredPatients);
-    });
+  getPatientName(){
+    this.service.patientsForNurse().subscribe((res:any)=>{
+      this.patientNames = res.data;
+    })
   }
+
+  // onPatientSelect(event: any) {
+  //   const selectedName = event.target.value;
+  //   if (selectedName) {
+  //     this.service.getPatientDetailsByName(selectedName).subscribe((res: any) => {
+  //       console.log('Patient Details:', res);
+  //       // Handle the response with patient details
+  //     });
+  //   }
+  // }
+
+
+  onPatientSelect(event: Event) {
+    const target = event.target as HTMLSelectElement | null;
+  
+    if (target && target.value) {
+      const selectedPatientId = target.value;
+  
+      if (selectedPatientId) {
+        this.service.getPatientDetailsByName(selectedPatientId).subscribe((res: any) => {
+          const patientDetails = res.data;
+  
+          if (patientDetails) {
+            this.myForm.patchValue({
+              email: patientDetails.email,
+              MRNnumber: patientDetails.MRNnumber,
+              mobilePhone: patientDetails.mobilePhone,
+            });
+          }
+        });
+      }
+    }
+  }
+  
+  
 
 
   // this functions API should be change

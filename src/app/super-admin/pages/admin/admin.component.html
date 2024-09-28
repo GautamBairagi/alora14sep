@@ -7,8 +7,6 @@
       <hr>
 
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-end">
-        <!-- <button type="button" [routerLink]="['/superAdmin/admins']" routerLinkActive="router-link-active"
-          class="btn btn-primary">Add Admin</button>-->
 
         <button type="button" [routerLink]="['/superAdmin/admins']" routerLinkActive="router-link-active"
           class="btn "  style="color: #438eb9;">
@@ -48,7 +46,7 @@
                 <td>{{ admin.formDate }}</td>
                 <td>{{ admin.toDate }}</td>
                 <td>
-                  <button class="btn btn-primary bg-transparent">
+                  <button class="btn btn-primary bg-transparent" style="border: none;box-shadow: none;">
                     <div *ngIf="!admin.account" style="color:#005dac;font-weight: bold;">Pending</div>
                     <div *ngIf="admin.account" style="color:green;font-weight: bold;">Approved</div>
                   </button>

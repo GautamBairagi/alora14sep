@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid pt-2">
     <nav style="--bs-breadcrumb-divider: '>>'" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item fs-4" style="color: #2679b5">
@@ -18,11 +18,12 @@
        
     <div class="mt-3 d-lg-flex d-md-flex d-sm-flex justify-content-between">
         <div class="mt-2 d-flex gap-3">
-          <label for="">Search:</label>
-          <input type="search" aria-label="Search" />
-          <button type="button" class="btn"  style="background-color: #6faed9;;"><span>+</span></button>
-            
-          <div class="form-check mt-2">
+          <form class="form-inline mb-3 pt-4" style="display: flex;">
+            <label for="search" class="me-2 fw-bold mt-2">Search:</label>
+            <input type="text" class="form-control mr-2" id="search" placeholder="Search"
+                style="width: 200px;">
+        </form>
+          <div class="form-check mt-4">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Include Specialty Licenses

@@ -1,12 +1,14 @@
-<section>
-    
+<section>    
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
-        <div class="container" *ngFor="let data of filteredPatients">
+        <div class="container mt-4">
             <h2>Add Report</h2>
             <div class="row mt-4">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <label for="">Patient Name</label>
-                    <input type="text" formControlName="firstname" [(ngModel)]="data.patientName" class="form-control" placeholder="Enter patient name" readonly>
+                    <select formControlName="firstname" class="form-select" (change)="onPatientSelect($event)">
+                        <option value="" selected>Select</option>
+                        <option *ngFor="let a of patientNames" [value]="a.patientId">{{ a.firstname }}</option>
+                    </select>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <label for="">Patient Email</label>
@@ -17,8 +19,8 @@
             <div class="row mt-4">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <label for="">MRN Number</label>
-                    <input type="text" formControlName="MRNnumber" class="form-control" placeholder="Enter MRN number" >
-                </div>
+                    <input type="text" formControlName="MRNnumber" class="form-control" placeholder="Enter MRN number" readonly>
+                  </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     <label for="">Mobile Phone</label>
                     <input type="text" formControlName="mobilePhone" class="form-control" placeholder="Enter mobile phone">
@@ -55,5 +57,4 @@
             
         </div>
     </form>
-    
 </section>

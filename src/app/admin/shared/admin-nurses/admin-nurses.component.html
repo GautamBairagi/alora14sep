@@ -46,6 +46,22 @@
                           </div>
                         </div>
                       </div>
+
+                      
+                      <div class="row mt-4">
+                        <div class="col-md-6">
+                          <label for="instruction">Covid 19 Tested</label>
+                          <select formControlName="Covid19Status" id="Covid19Status" class="form-select" >
+                            <option value="" hidden>select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                          <div *ngIf="myForm.get('Covid19Status')?.touched && myForm.get('Covid19Status')?.invalid">
+                            <small class="text-danger" >Covid19 Status is required</small>
+                          </div>
+                        </div>
+                      </div>
+                      
                   
                       <div class="row mt-4">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">

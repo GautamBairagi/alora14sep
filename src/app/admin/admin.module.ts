@@ -50,6 +50,7 @@ import { SupervisoryVisitComponent } from './clinic/supervisory-visit/supervisor
 import { IncidentReportComponent } from './clinic/incident-report/incident-report.component';
 import { PatientScreeningComponent } from './covid19/patient-screening/patient-screening.component';
 import { StaffScreeningComponent } from './covid19/staff-screening/staff-screening.component';
+import { BillingDashboardComponent } from './billing-dashboard/billing-dashboard.component';
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { StaffScreeningComponent } from './covid19/staff-screening/staff-screeni
     SupervisoryVisitComponent,
     IncidentReportComponent,
     PatientScreeningComponent,
-    StaffScreeningComponent
+    StaffScreeningComponent,
+    BillingDashboardComponent
   ],
   imports: [
     CommonModule,

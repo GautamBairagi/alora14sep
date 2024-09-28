@@ -115,6 +115,11 @@ postDoctors(data: any) {
     return this.get(superAdminEndPoints.patientById + id )
    }
 
+   getPatientDetailsByName(patientId: string): Observable<any> {
+    // return this.http.get(`${this.baseUrl}/patientsbyname/${name}`);
+    return this.get(superAdminEndPoints.patientForDtl + patientId )
+  }
+
    private patientDetailDataSubject = new BehaviorSubject<any>(null);
    patientDetailData$ = this.patientDetailDataSubject.asObservable();
  

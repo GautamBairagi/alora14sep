@@ -1,1 +1,75 @@
-<p>staff-screening works!</p>
+<h2>Nurses with Covid-19 Test</h2>
+
+<section>
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Tested</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Not Tested</button>
+                    </li>
+                   
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                       <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Sr No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Covid-19 Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let nurse of covidPositiveNurses;let i = index">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ nurse.name }}</td>
+                                <td>{{ nurse.email }}</td>
+                                <td>{{ nurse.mobileNumber }}</td>
+                                <td>{{ nurse.Covid19Status }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                       </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Sr No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile Number</th>
+                                    <th>Covid-19 Status</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let nurse of covidNegativeNurses;let i = index">
+                                    <td>{{ i+1 }}</td>
+                                    <td>{{ nurse.name }}</td>
+                                    <td>{{ nurse.email }}</td>
+                                    <td>{{ nurse.mobileNumber }}</td>
+                                    <td>{{ nurse.Covid19Status }}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</section>

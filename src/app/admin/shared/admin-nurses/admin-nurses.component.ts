@@ -27,7 +27,8 @@ export class AdminNursesComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       mobileNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
-      doctorId:[this.userId]
+      doctorId:[this.userId],
+      Covid19Status:['',Validators.required]
     });
   }
 
