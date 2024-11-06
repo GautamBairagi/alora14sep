@@ -161,14 +161,13 @@
     
 </section> -->
 <div class="container-fluid  mt-3">
-  <div class="page-title">Lead<span class="sub-title ms-2"> <i class="fa-duotone fa-solid fa-arrows-turn-right"></i>Lead
+  <div class="page-title">View all patients<span class="sub-title ms-2"> <i class="ace-icon fa fa-angle-double-right" style="font-size: 15px;"></i> Patients
       Search</span></div>
   <div class="col-lg-12 col-md-12 d-flex  gap-2  mt-2 "
     style="background-color: #F7F7F7; white-space: wrap ; height: 70px;">
-    <h5 class="fs-4 mt-3 text-center p-2" style="color: #777 ;">Lead</h5>
+    <h5 class="fs-4 mt-3 text-center p-2" style="color: #777 ;"><i class="fa-solid fa-user" style="font-size: 22px;"></i> Patients</h5>
     <span><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-      class="btn text-white mt-3" style="background-color: #4F99C6;" ><span><i
-          class="fa-sharp fa-solid fa-plus"></i></span> Add</button></span>
+      class="btn text-white mt-3" style="background-color: #4F99C6;" ><span><i class="fa fa-plus" aria-hidden="true"></i></span> Add</button></span>
   </div>
 
 
@@ -238,7 +237,7 @@
   <div class="row">
     <div class="col-md-6 col-12 mt-3">
       <div class="form-inline mb-3" style="display: flex;">
-        <label for="search" class="me-2 fw-bold ">Search:</label>
+        <label for="search" class="me-2">Search:</label>
 
         <input type="text"  class="form-control mr-2  form-control-sm"
           id="search" placeholder="Search">
@@ -247,14 +246,15 @@
     </div>
     <div class="col-md-6 col-12">
       <div class="form-inline mb-3 float-md-end mt-2" style="display: flex; ">
-        <label for="entries" class="me-2 fw-bold">Show</label>
-        <select id="entries" class="form-control mr-2" style="width: auto; border-color: #FFA500;">
-          <option value="10">10</option>
-          <option value="25" selected>25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
+        <label for="entries" class="me-2">Show</label>
+        <select class="form-select" aria-label="Default select example" style="height: 32px;">
+          <option selected>10</option>
+          <option value="1">25</option>
+          <option value="2">50</option>
+          <option value="3">100</option>
         </select>
-        <label for="entries fw-bold">entries</label>
+        
+        <label for="entries fw-bold" class="mx-2">entries</label>
       </div>
     </div>
   </div>
@@ -263,25 +263,83 @@
       <thead class="" style="font-size: 13px; text-wrap: nowrap; ">
         <tr>
           <th style="color: #4F99C6;">SR NO</th>
-          <th style="color: #4F99C6;">LEAD NAME</th>
-          <th style="color: #4F99C6;">CERTIFICATE </th>
-          <th style="color: #4F99C6;">EMAIL </th>
-          <th style="color: #4F99C6;">SERVICES TYPE</th>
-          <th style="color: #4F99C6;">NOTE </th>
-          <th style="color: #4F99C6;">STATUS</th>
-          <th style="color: #4F99C6;">ACTION</th>
+          <th style="color: #4F99C6;">Image</th>
+          <th style="color: #4F99C6;">First Name</th>
+          <th style="color: #4F99C6;">Middle Name</th>
+          <th style="color: #4F99C6;">Last Name</th>
+          <th style="color: #4F99C6;">Date of Birth</th>
+          <th style="color: #4F99C6;">Gender</th>
+          <th style="color: #4F99C6;">City</th>
+          <th style="color: #4F99C6;">Email</th>
+          <th style="color: #4F99C6;">Action</th>
 
         </tr>
+        
       </thead>
 
       <tbody style="text-wrap: nowrap;" class="">
-        <tr style="background-color: #f9f9f9;">
+        <tr style="background-color: #f9f9f9; ">
         
-          
+          <td>01</td>
+          <td><div style=" display: flex; justify-content: center;">
+            <img style="height: 40px; width: 40px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz68b1g8MSxSUqvFtuo44MvagkdFGoG7Z7DQ&s
+            " alt="">
+          </div></td>
+          <td>Ammen</td>
+          <td>Bumrah</td>
+          <td>Meena</td>
+          <td>03/09/1992</td>
+          <td>Female</td>
+          <td>Indore</td>
+          <td>admin@gmail.com</td>
+          <td><button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deelteLead">
+            Delete
+          </button></td>
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deelteLead">
-  Delete
-</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deelteLead" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete lead</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete {{ patientByIdData.name }}'s lead?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+       
+     
+
+        </tr>
+
+        <tr style="background-color: #f9f9f9; ">
+        
+          <td>01</td>
+          <td><div style=" display: flex; justify-content: center;">
+            <img style="height: 40px; width: 40px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz68b1g8MSxSUqvFtuo44MvagkdFGoG7Z7DQ&s
+            " alt="">
+          </div></td>
+          <td>Ammen</td>
+          <td>Bumrah</td>
+          <td>Meena</td>
+          <td>03/09/1992</td>
+          <td>Female</td>
+          <td>Indore</td>
+          <td>admin@gmail.com</td>
+          <td><button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#deelteLead">
+            Delete
+          </button></td>
+            <!-- Button trigger modal -->
+
 
 <!-- Modal -->
 <div class="modal fade" id="deelteLead" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
