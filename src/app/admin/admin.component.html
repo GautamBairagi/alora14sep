@@ -4,9 +4,9 @@
             <button class="navbar-toggler mt-3 border-0 text-light" style="background-color: #5090bf;" type="button"
                 (click)="toggleSidebar2()">
                 <i class="fa-sharp fa-light fa-bars"></i>
-                
+
             </button>
-            <a  > <img src="  ../../assets/healthlogo-removebg-preview-removebg-preview.png" style="width: 150px;"
+            <a> <img src="  ../../assets/healthlogo-removebg-preview-removebg-preview.png" style="width: 150px;"
                     class="card-img-top" alt="..."></a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
@@ -15,10 +15,10 @@
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <ul class="navbar-nav navbarul">
                 <li class="nav-item" style="border-right: 1px solid gray;">
-                    <a class="nav-link"  >Hii, {{homecarename}}</a>
+                    <a class="nav-link">Hii, {{homecarename}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer;" (click)="logouts()">LogOut</a>
+                    <a class="nav-link" style="cursor: pointer;" (click)="logouts()">Log off</a>
                 </li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
 
         </div>
         <ul class="nav flex-column unique-nav mt-2">
-            
+
             <li class="nav-item">
                 <a class="nav-link unique-nav-link" (click)="toggleSidebar2()">
                     <i class="fas fa-arrow-left unique-icon"></i>
@@ -43,6 +43,11 @@
                     <i class="fas fa-home unique-icon"></i>
                     <span class="unique-nav-text">Home</span>
                 </a>
+
+
+
+
+
             </li>
             <li class="nav-item">
                 <a routerLink="/Admin/admin_dashboard" class="nav-link unique-nav-link">
@@ -51,31 +56,34 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a    routerLink="/Admin/View_BillingDashboard" class="nav-link unique-nav-link">
-                    <i class="fas fa-tachometer-alt unique-icon"></i>
+                <a routerLink="/Admin/View_BillingDashboard" class="nav-link unique-nav-link">
+                    <i class="fas fa-file-invoice-dollar unique-icon"></i>
                     <span class="unique-nav-text">Billing Dashboard</span>
                 </a>
             </li>
 
-           
 
-           
+
+
             <li class="nav-item">
                 <a routerLink="/Admin/view_patients" class="nav-link unique-nav-link">
-               
-                    <i class="fas fa-solid fa-users unique-icon"></i>
+
+                    <i class="fas fa-user-injured unique-icon"></i>
                     <span class="unique-nav-text">Patients</span>
                 </a>
             </li>
 
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#covid"
-                        role="button" aria-expanded="false" aria-controls="covid">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#covid" role="button"
+                        aria-expanded="false" aria-controls="covid">
+                        <i class="fas fa-virus unique-icon"></i>
                         <span class="unique-nav-text">Covid 19 Screening</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
+
+
+
                     <div class="collapse unique-submenu" id="covid" data-bs-parent="#adminAccor">
                         <ul class="flex-column nav">
                             <li class="nav-item">
@@ -88,22 +96,24 @@
                                     Staff Screening
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </li>
             </div>
+
+
             <li class="nav-item">
                 <a routerLink="/Admin/View_alot" class="nav-link unique-nav-link">
-                    <i class="fas fa-solid fa-calendar-check unique-icon"></i>
+                    <i class="fas fa-calendar-alt unique-icon"></i>
                     <span class="unique-nav-text">Scheduling</span>
                 </a>
             </li>
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#clinic"
-                        role="button" aria-expanded="false" aria-controls="clinic">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#clinic" role="button"
+                        aria-expanded="false" aria-controls="clinic">
+                        <i class="fas fa-stethoscope unique-icon"></i>
                         <span class="unique-nav-text">Clinical</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
@@ -137,7 +147,7 @@
 
                             <li class="nav-item">
                                 <a routerLink="/Admin/order_plus" class="nav-link unique-nav-link">
-                                    Order Plus 
+                                    Order Plus
                                 </a>
                             </li>
 
@@ -204,22 +214,24 @@
                                 </a>
                             </li>
 
-                           
+
                         </ul>
                     </div>
                 </li>
             </div>
             <li class="nav-item">
-                <a  routerLink="/Admin/View_Aloramail" class="nav-link unique-nav-link">
-                    <i class="fas fa-solid fa-calendar-check unique-icon"></i>
+                <a routerLink="/Admin/View_Aloramail" class="nav-link unique-nav-link">
+                    <i class="fas fa-envelope unique-icon"></i>
                     <span class="unique-nav-text">Home Health Mail</span>
                 </a>
             </li>
+
+
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
                     <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#billing"
                         role="button" aria-expanded="false" aria-controls="billing">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <i class="fas fa-money-bill-wave unique-icon"></i>
                         <span class="unique-nav-text">Billing</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
@@ -274,11 +286,16 @@
                     </div>
                 </li>
             </div>
+
+
+
+
+
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
-                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#AR"
-                        role="button" aria-expanded="false" aria-controls="AR">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                    <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#AR" role="button"
+                        aria-expanded="false" aria-controls="AR">
+                        <i class="fas fa-receipt unique-icon"></i>
                         <span class="unique-nav-text">AR</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
@@ -294,7 +311,7 @@
                                     Post Payment
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </li>
@@ -305,7 +322,7 @@
                     <span class="unique-nav-text">Care Givers</span>
                 </a>
             </li>
-          
+
             <li class="nav-item">
                 <a routerLink="/Admin/clock_status" class="nav-link unique-nav-link">
                     <i class="fas fa-solid fa-clock-rotate-left unique-icon"></i>
@@ -313,13 +330,13 @@
                 </a>
             </li>
 
-          
+
 
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
                     <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#adminMenu"
                         role="button" aria-expanded="false" aria-controls="adminMenu">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <i class="fas fa-user-cog unique-icon"></i>
                         <span class="unique-nav-text">Admin</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
@@ -350,14 +367,14 @@
                 </li>
             </div>
 
-            
 
-            
+
+
             <div class="accordion" id="adminAccor">
                 <li class="nav-item">
                     <a class="nav-link unique-nav-link collapsed" data-bs-toggle="collapse" href="#careConnect"
                         role="button" aria-expanded="false" aria-controls="careConnect">
-                        <i class="fa-solid fa-circle-question unique-icon"></i>
+                        <i class="fas fa-link unique-icon"></i>
                         <span class="unique-nav-text">Care Connect/Evv</span>
                         <i class="fas fa-chevron-down unique-chevron"></i>
                     </a>
@@ -373,7 +390,7 @@
                                     Conflicts
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </li>
