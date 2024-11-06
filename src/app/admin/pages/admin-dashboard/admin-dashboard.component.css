@@ -1,4 +1,4 @@
-.fas{
+/* .fas{
     background-color: #5090C1;
     color: #fff;
     padding: 5%;
@@ -16,4 +16,128 @@
         padding-top: 15px;
         margin-left: 0;
     }
+} */
+
+
+
+
+ /* Dashboard Container */
+ .dashboard-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+
+}
+
+/* Stat Box Styling */
+.stat-box {
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 100px;
+}
+
+.stat-box h5 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Button Box Styling */
+.main-box, .main-box-orange, .main-box-blue {
+    border-radius: 8px;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.main-box {
+    background-color: #16d39a;
+}
+
+.main-box1{
+    background-color: #16d39a;
+}
+
+.main-box2{
+    background-color:#16d39a;
+}
+.main-box3{
+    background-color: rgb(255 117 136);
+}
+.main-box4{
+    background-color: #16d39a;
+}
+
+
+.main-box-orange2{
+    background-color: #16d39a !important;
+}
+.main-box-orange {
+    background-color: rgb(255 168 125);
+}
+.main-box-blue1 {
+    background-color: #16d39a;
+}
+.main-box-blue {
+    background-color: rgb(255 117 136);
+   
+}
+
+.main-box p {
+    font-size: 0.85rem;
+    color: black !important;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Table Styling */
+.table-responsive {
+    margin-bottom: 20px;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+/* Active Patient Payer Box */
+.active-payer-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: #0275d8;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stat-box, .main-box, .main-box-orange, .main-box-blue, .active-payer-box {
+        margin-bottom: 20px;
+    }
+}
+.Addbox{
+height: 100px !important;
+margin-top: 20px;
 }
