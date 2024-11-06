@@ -34,10 +34,18 @@
   }
   
 } */
+
+.dotted-line {
+  border: none;
+  border-top: 1px dotted #000; /* Change #000 to any color you prefer */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .page-title {
   font-size: 28px;
   margin-bottom: 10px;
-  font-weight: 500;
+  /* font-weight: 500; */
   margin-top: 2rem;
   color: #6fb3e0;
 }
