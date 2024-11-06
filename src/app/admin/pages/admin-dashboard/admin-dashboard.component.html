@@ -1,53 +1,4 @@
-<!-- <section>
-<div class="grey-bg container-fluid mt-4">
-  <section id="minimal-statistics">
-    <div class="row">
-    
-    </div>
-    <div class="row">
-      <div class="col-xl-3 col-sm-6 col-12"> 
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="align-self-center">
-                  <i class="icon-pencil primary font-large-2 float-left"></i>
-                </div>
-                <div class="media-body text-right">
-                  <h3>27</h3>
-                  <span>Care Givers</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-body">
-              <div class="media d-flex">
-                <div class="align-self-center">
-                  <i class="icon-speech warning font-large-2 float-left"></i>
-                </div>
-                <div class="media-body text-right">
-                  <h3>56</h3>
-                  <span>Patients</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  
-   
-  </section>
-  
- 
-</div>
-</section> -->
+<!-- 
 
 
 <div style="padding: 15px;">
@@ -110,12 +61,224 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-md-12">
-        <canvas baseChart id="chartBar2" class="chart h-300" [data]="transparencyChartDataDoctor">
-        </canvas>
-      </div>
-    </div> -->
- 
+</div> -->
+
+
+
    
+  
+
+
+
+<div class="dashboard-page mt-4 ">
+
+  <div class="container-fluid" >
+      <section id="minimal-statistics">
+          <div class="row">
+            <div class="col-12 mt-3 mb-1">
+              <h4 class="text-uppercase">Dashboard</h4>
+              <p>Admin Dashboard</p>
+            </div>
+          </div>
+
+          <div class="row no-gutters">
+            <div class="col-sm-6 col-md-2 col-lg-3 col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #5090C1;
+          color: #fff; font-size: 22px;"><i class="fas fa-newspaper"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Announcements</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #f39c12!important;
+          color: #fff; font-size: 22px;"><i class="fa fa-graduation-cap"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Live
+                                Training</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #f39c12!important;
+          color: #fff; font-size: 22px;"><i class="fa fa-play"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Training
+                                Videos</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3  col-6">
+                <div class="info-box d-flex justify-content-start shadow py-2 ">
+                    <span class="info-box-icon custom-info-box-icon px-2 py-1" style="background-color: #5090C1;
+          color: #fff; font-size: 22px;"><i class="fa fa-key"></i></span>
+                    <div class="info-box-content px-4">
+                        <span class="info-box-number"><a href="#" style="font-size: 20px;">Add
+                                Features</a></span>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12" routerLink="/Admin/Client_view">
+              <div class="card">
+                <div class="card-content ">
+                  <div class="card-body main-box1">
+                    <div class="media d-flex ">
+                      <div class="align-self-center">
+                      
+                        <i class="icon-user success font-large-2 float-left"></i>
+                      </div>
+                      <div class="media-body text-right ">
+                        <h3>1</h3>
+                        <span>Active Clients</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12"  routerLink="/Admin/Leadlist">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body main-box3">
+                    <div class="media d-flex">
+                      <div class="align-self-center">
+                        <i class="icon-speech warning font-large-2 float-left"></i>
+                      </div>
+                      <div class="media-body text-right">
+                        <h3>1</h3>
+                        <span>Open Lead Request</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12" routerLink="/Admin/Client_view">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body main-box2">
+                    <div class="media d-flex">
+                      <div class="align-self-center">
+                        <i class="icon-graph success font-large-2 float-left"></i>
+                      </div>
+                      <div class="media-body text-right">
+                        <h3>1</h3>
+                        <span>Expired Caregivers</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12" routerLink="/Admin/Client_view">
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-body main-box3">
+                    <div class="media d-flex">
+                      <div class="align-self-center">
+                        <i class="icon-pointer danger font-large-2 float-left"></i>
+                      </div>
+                      <div class="media-body text-right">
+                        <h3>22</h3>
+                        <span>Expired client  date</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+             
+            </div>
+          </div>
+  
+  
+        </section>
+
+
+      <div class="row mt-5">
+          <div class="col-lg-8 mb-3">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="d-flex">
+                          <h6 class="fw-bold">Visit Statistics: 10/10/2024 - 10/16/2024</h6>
+                          <button class="btn btn-dark btn-sm ms-auto mb-2">Select Statics</button>
+                      </div>
+                      
+                      <div class="table-responsive">
+                          <table class="table table-bordered text-center">
+                              <thead>
+                                  <tr class="table-light">
+                                      <th>SN</th>
+                                      <th>PT</th>
+                                      <th>OT</th>
+                                      <th>ST</th>
+                                      <th>MSW</th>
+                                      <th>HHA</th>
+                                      <th>OTHR</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>Scheduled</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Missed</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Completed</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Unposted</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                      <td>0</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-4 mb-3" >
+              <div class="active-payer-box" style="height: 310px;">
+                  <h6 class="fw-bold">Active Patients by Payer (0)</h6>
+                 
+                  <a  class="view-all-link">View All</a>
+                  <div class="d-flex justify-content-center mt-4">
+                      <i class="fas fa-chevron-left"></i>
+                      <div class="px-3">No Active Patients</div>
+                      <i class="fas fa-chevron-right"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
